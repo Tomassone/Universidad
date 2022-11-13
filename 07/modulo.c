@@ -77,12 +77,21 @@ float rettangoli_it(float a, float b, float n)
 	return area;
 }
 
-/*float rettangoli_ric(float a, float b, float n)
+float calc_ric(float a, float b, float delta, float max, float area)
 {
-	if ((b - a) == 0)
+	if (b > max)
 		return 0;
 	else
 	{
-		rettangoli_ric(a, b, n);
+		area = (b - a) * (float) f((double) a) + calc_ric((a + delta), (b + delta), delta, max, area);
+		return area;
 	}
-}*/
+}
+
+float rettangoli_ric(float a, float b, float n)
+{
+	float area = 0;
+	area = calc_ric(a, a + (b - a) / n, (b - a) / n, b, area);
+	return area;
+}
+

@@ -28,3 +28,7 @@ int calc_tr(int x, int y, int z, float* X, float* Y);*/
 double f(double);
 
 float rettangoli_it(float, float, float);
+
+float calc_ric(float, float, float, float, float);
+
+float rettangoli_ric(float, float, float);

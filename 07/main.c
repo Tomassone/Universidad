@@ -53,7 +53,6 @@
 
 //es 6
 
-
 int main()
 {
 	float a, b, N;
@@ -65,6 +64,8 @@ int main()
 	printf("Digita un N: ");
 	scanf("%f", &N);
 	intgr = rettangoli_it(a, b, N);
-	printf("Il valore e' %f.\n", intgr);
+	printf("Il valore iterativo e' %f.\n", intgr);
+	intgr = rettangoli_ric(a, b, N);
+	printf("Il valore ricorsivo e' %f.\n", intgr);
 	return 0;
 }
