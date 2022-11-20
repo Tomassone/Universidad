@@ -157,39 +157,28 @@ int readVett(int V[], int dim)
 
 void confr_vett(int V[], int dim1, int W[], int dim2)
 {
-	int i, j;
-	int min1, min2;
-	int ind_1, ind_2;
-	int k = 0, h = 0;
-	for (i = 0; i < dim1 + dim2; i++)
+	int i = 0, j = 0;
+	while (i < dim1 && j < dim2)
 	{
-		min1 = V[k];
-		min2 = W[h];
-		for (j = 0; j < dim1; j++)
+		if (V[i] < W[j])
 		{
-			if (min1 >= V[j] && V[j] != BIG_VALUE)
-			{
-				min1 = V[j];
-				ind_1 = j;
-			}
-		}
-		for (j = 0; j < dim2; j++)
-			if (min2 >= W[j] && W[j] != BIG_VALUE)
-			{
-				min2 = W[j];
-				ind_2 = j;
-			}
-		if (min1 < min2)
-		{
-			printf("%d ", V[ind_1]);
-			V[ind_1] = BIG_VALUE;
-			k++;
+			printf("%d", V[i]);
+			i++;
 		}
 		else
 		{
-			printf("%d ", W[ind_2]);
-			W[ind_2] = BIG_VALUE;
-			h++;
+			printf("%d", W[j]);
+			j++;
 		}
+	}
+	while(i < dim1)
+	{
+		printf("%d", V[i]);
+		i++;
+	}
+	while(j < dim2)
+	{
+		printf("%d", W[j]);
+		j++;
 	}
 }
