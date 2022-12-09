@@ -13,17 +13,8 @@ void checkPari(int X[], int dim, int* p, int* d);*/
 
 //es 7
 
-#define UNSUCCESS -1
-
 int readVett(int V[], int dim);
-
-int checkPres(int V[], int dim, int n);
 
 //es 8
 
-/*#define UNSUCCESS -1
-
-int readVett(int V[], int dim);
-
-int checkPres(int V[], int dim, int n);*/
-
+/*int readVett(int V[], int dim);

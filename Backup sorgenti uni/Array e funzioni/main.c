@@ -1,7 +1,7 @@
 
 #define _CRT_SECURE_NO_DEPRECATE //direttiva mandandata al compilatore; per la scanf_s (ci permette di usare la scanf normale)
 #include <stdio.h>
-#include "modulo.c"
+#include "modulo.h"
 
 //es 1
 

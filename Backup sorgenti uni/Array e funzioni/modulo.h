@@ -26,6 +26,11 @@ int removeRep(int V[], int dim1, int W[], int dim2);*/
 
 //es 9 
 
+#define FRST_ARR 1
+#define SCND_ARR 2
+#define BIG_VALUE 10000000
+#include <math.h> 
+
 int readVett(int V[], int dim);
 
 void confr_vett(int V[], int dim1, int W[], int dim2);

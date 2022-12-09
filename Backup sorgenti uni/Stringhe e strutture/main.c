@@ -1,8 +1,10 @@
 
 #include <stdio.h>
-#include "modulo.c"
+#include "modulo.h"
 
 //es 12
+
+#define _CRT_SECURE_NO_DEPRECATE //direttiva mandandata al compilatore; per la scanf_s (ci permette di usare la scanf normale)
 
 /*#define DIM 3
 
@@ -93,59 +95,6 @@ int main()
 	return 0;
 }*/
 
-//es 15
-
-#define DIM1 5
-#define DIM2 5
-#define TYPE int
-#define BOOLEAN int
-#define RESULT int
-#define TRUE 1
-#define FALSE 0
-
-BOOLEAN equals(TYPE el1, TYPE el2)
-{
-	if (el1 == el2)
-		return TRUE;
-	else
-		return FALSE;
-}
-
-RESULT compareTo(TYPE v1[], TYPE v2[], int dim1, int dim2)
-{
-	int i;
-	int res = TRUE;
-	if (dim1 != dim2)
-		res = FALSE;
-	for (i = 0; i < dim1 && res == TRUE; i++)
-	{
-		if (!equals(v1[i], v2[i]))
-			res = FALSE;
-	}
-	return res;
-}
-
-int main()
-{
-	int i, V[DIM1], W[DIM2];
-	printf("Primo vettore: \n");
-	for (i = 0; i < DIM1; i++)
-	{
-		printf("Digita un elemento del vettore: ");
-		scanf("%d", &V[i]);
-	}
-	printf("Secondo vettore: \n");
-	for (i = 0; i < DIM2; i++)
-	{
-		printf("Digita un elemento del vettore: ");
-		scanf("%d", &W[i]);
-	}
-	if (compareTo(V, W, DIM1, DIM2) == TRUE)
-		printf("I due vettori sono uguali.\n");
-	else
-		printf("I due vettori non sono uguali.\n");
-	return 0;
-}
 
 //es 16
 
@@ -159,7 +108,7 @@ int main()
 
 BOOLEAN equals(TYPE el1, TYPE el2)
 {
-	if (el1 == el2)
+	if (el1 = el2)
 		return TRUE;
 	else
 		return FALSE;
@@ -213,9 +162,9 @@ int main()
 
 //es 1 (stringhe)
 
-/*#define DIM1 12
-#define DIM2 10
-#define DIM3 20
+#define DIM1 15
+#define DIM2 25
+#define DIM3 40
 
 int conc(char A[], char B[], char C[], int dim3)
 {
@@ -228,13 +177,11 @@ int conc(char A[], char B[], char C[], int dim3)
 	C[i] = '\0';
 	while (B[j] != '\0')
 		j++;
-	for (h = 0; h < j && (h + i) < dim3; h++)
-	{
+	for (h = 0; h < j && (h + i) ; h++)
 		C[h + i] = B[h];
-	}
 	C[h + i] = '\0';
 	printf("%s\n", C);
-	return (h + i);
+	return (h + i) - 1;
 }
 
 int main()
@@ -242,10 +189,10 @@ int main()
 	int dim_l3;
 	char U[DIM1], V[DIM2], W[DIM3];
 	printf("Digita una stringa: ");
-	scanf("%s", U);
+	scanf_s("%s", U, DIM1);
 	printf("Digita una stringa: ");
-	scanf("%s", V);
+	scanf_s("%s", V, DIM2);
 	dim_l3 = conc(U, V, W, DIM3);
 	printf("Il numero di caratteri copiati nella stringa finale e' %d.\n", dim_l3);
 	return 0;
-}*/
+}

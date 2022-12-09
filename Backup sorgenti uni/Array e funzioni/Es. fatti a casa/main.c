@@ -32,31 +32,8 @@
 
 //es 7
 
-int main()
-{
-	int i, V[DIM], dim_l;
-	dim_l = readVett(V, DIM);
-	for (i = 0; i < dim_l; i++)
-		if (checkPres(V, dim_l, V[i]) != UNSUCCESS && i != checkPres(V, dim_l, V[i]))
-			printf("%d ", V[i]);
-	return 0;
-}
+
 
 //es 8
-
-/*int main()
-{
-	int V[DIM], W[DIM];
-	int dim_l1, dim_l2;
-	int i;
-	printf("Primo vettore: \n");
-	dim_l1 = readVett(V, DIM);
-	printf("Secondo vettore: \n");
-	dim_l2 = readVett(W, DIM);
-	for (i = 0; i < dim_l1; i++)
-		if (checkPres(W, dim_l2, V[i]) == UNSUCCESS)
-			printf("%d ", V[i]);
-	return 0;
-}*/
 
 

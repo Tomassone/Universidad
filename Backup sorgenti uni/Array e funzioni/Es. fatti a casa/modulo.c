@@ -84,19 +84,7 @@ int readVett(int V[], int dim)
 		i++;
 	}
 	while (i < dim && num != 0);
-	return i;
 }	
-
-int checkPres(int V[], int dim, int n)
-{
-	int i;
-	for (i = 0; i < dim; i++)
-	{
-		if (V[i] == n)
-			return i;
-	}
-	return UNSUCCESS;
-}
 
 //es 8
 
@@ -115,16 +103,4 @@ int checkPres(int V[], int dim, int n)
 		i++;
 	}
 	while (i < dim && num != 0);
-	return i;
-}
-
-int checkPres(int V[], int dim, int n)
-{
-	int i;
-	for (i = 0; i < dim; i++)
-	{
-		if (V[i] == n)
-			return i;
-	}
-	return UNSUCCESS;
 }*/
