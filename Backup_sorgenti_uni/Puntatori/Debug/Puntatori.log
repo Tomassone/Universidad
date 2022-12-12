@@ -1,0 +1,8 @@
+﻿  main.c
+C:\Users\s0001070949\Desktop\Progetti\Puntatori\main.c(66,29): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  modulo.c
+C:\Users\s0001070949\Desktop\Progetti\Puntatori\modulo.c(68,1): warning C4142: 'rettangoli': benign redefinition of type
+C:\Users\s0001070949\Desktop\Progetti\Puntatori\modulo.h(29): message : see declaration of 'rettangoli'
+C:\Users\s0001070949\Desktop\Progetti\Puntatori\modulo.c(71,12): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  Generating Code...
+  Puntatori.vcxproj -> C:\Users\s0001070949\Desktop\Progetti\Puntatori\Debug\Puntatori.exe
