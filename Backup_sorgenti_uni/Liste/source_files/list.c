@@ -45,7 +45,8 @@ void showlist(list l)
 		showlist(tail(l));
 		return;
 	}
-	else {
+	else
+	{
 		printf("\n\n");
 		return;
 	}

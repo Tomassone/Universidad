@@ -1,5 +1,5 @@
-PaoloBellavista binario.dat
-PaolaMello binario.dat
-FedericoChesani binario.dat
-CarloGiannelli binario.dat
-MarcoMontali binario.dat
+PaoloBellavista ..//Liste//file//binario.dat
+PaolaMello ..//Liste//file//binario.dat
+FedericoChesani ..//Liste//file//binario.dat
+CarloGiannelli ..//Liste//file//binario.dat
+MarcoMontali ..//Liste//file//binario.dat

@@ -82,16 +82,16 @@ list findBills(char* fileName, char* clientName)
 {
 	FILE* fp = fopen(fileName, "rb");
 	work temp;
-	list lista = emptylist();
+	list lista;
 	if (fp != NULL)
 	{
-		while (fread(&temp, sizeof(work), 1, fp) > 0)
+		lista = emptylist();
+		while (fread(&temp, sizeof(work), 1, fp) == 1)
 		{
 			//printf("%f", temp.importo);
 			if (!strcmp(temp.nome_cl, clientName))
 				lista = cons(temp.importo, lista);
 		}
-		rewind(fp);
 		fclose(fp);
 		return lista;
 	}

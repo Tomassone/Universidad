@@ -99,31 +99,38 @@ int main()
 
 //es5 
 
+#define DIM 65
+
 int main()
 {
-	char text_path[65], binary_path[45] = "..//Liste//file//", client_name[65];
+	float importo_tot;
+	char text_path[DIM], binary_path[DIM], client_name[DIM];
 	FILE* fp; 
-	list l;
-	char temp1[40], temp2[40];
+	list temp;
+	char nome_cl[DIM], inizio_bin[DIM];
 	build_binary();
 	printf("Digita il percorso del file di testo: ");
-	scanf("%s", text_path);
+	scanf("%s%*c", text_path);
 	printf("Digita il nome del cliente: ");
-	scanf("%s", client_name);
+	scanf("%s%*c", client_name);
 	fp = fopen(text_path, "r");
 	if (fp != NULL)
 	{
-		while(fscanf(fp, "%s %s\n", temp1, temp2) != EOF)
+		while(fscanf(fp, "%s %s\n", nome_cl, inizio_bin) != EOF)
 		{
-			printf("%s\n", temp1);
-			strcat(binary_path, temp2);
+			printf("%s\n", nome_cl);
 			printf("%s\n", binary_path);
-			l = findBills("..//Liste//file//binario.dat", temp1);
-			if (!empty(l))
-				showlist(l);
+			temp = findBills(binary_path, nome_cl);
+			showlist(temp);
+			while(!empty(temp))
+			{
+				importo_tot = importo_tot + head(temp);
+				temp = tail(temp);
+			}
+			printf("\nImporto totale: %f\n", importo_tot);
 		}
 		fclose(fp);
-		freelist(l);
+		freelist(temp);
 	}
 	else
 	{
