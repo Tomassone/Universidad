@@ -29,9 +29,11 @@ long_line_column=72
 
 [files]
 current_page=2
-FILE_NAME_0=0;C;0;EUTF-8;1;1;0;%2FUsers%2FCesare%2FDocuments%2FGitHub%2FUniversidad%2FBackup_sorgenti_uni%2FListe%2Fsource_files%2Flist.c;0;4
-FILE_NAME_1=0;C;0;EUTF-8;1;1;0;%2FUsers%2FCesare%2FDocuments%2FGitHub%2FUniversidad%2FBackup_sorgenti_uni%2FListe%2Fsource_files%2Fmain.c;0;4
-FILE_NAME_2=327;C;0;EUTF-8;1;1;0;%2FUsers%2FCesare%2FDocuments%2FGitHub%2FUniversidad%2FBackup_sorgenti_uni%2FListe%2Fsource_files%2Fmodulo.c;0;4
+FILE_NAME_0=770;C;0;EUTF-8;1;1;0;%2FUsers%2FCesare%2FDocuments%2FGitHub%2FUniversidad%2FBackup_sorgenti_uni%2FListe%2Fsource_files%2Flist.c;0;4
+FILE_NAME_1=2693;C;0;EUTF-8;1;1;0;%2FUsers%2FCesare%2FDocuments%2FGitHub%2FUniversidad%2FBackup_sorgenti_uni%2FListe%2Fsource_files%2Fmain.c;0;4
+FILE_NAME_2=2151;C;0;EUTF-8;1;1;0;%2FUsers%2FCesare%2FDocuments%2FGitHub%2FUniversidad%2FBackup_sorgenti_uni%2FListe%2Fsource_files%2Fmodulo.c;0;4
+FILE_NAME_3=102;C++;0;EUTF-8;1;1;0;%2FUsers%2FCesare%2FDocuments%2FGitHub%2FUniversidad%2FBackup_sorgenti_uni%2FListe%2Fheader_files%2Flist.h;0;4
+FILE_NAME_4=0;C++;0;EUTF-8;1;1;0;%2FUsers%2FCesare%2FDocuments%2FGitHub%2FUniversidad%2FBackup_sorgenti_uni%2FListe%2Fheader_files%2Fmodulo.h;0;4
 
 [VTE]
 last_dir=/Users/Cesare
