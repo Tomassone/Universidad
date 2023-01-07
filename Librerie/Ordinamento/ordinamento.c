@@ -1,7 +1,9 @@
 
+#define _CRT_SECURE_NO_DEPRECATE
+
 #include "ordinamento.h"
 
-void scambia(int *a, int *b)
+void scambia(int* a, int* b)
 {
 	int tmp = *a;
 	*a = *b;
@@ -16,8 +18,8 @@ void naiveSort(int v[], int n)
 	while (n > 1) 
 	{
 		p = trovaPosMax(v, n);
-		if (p < n - 1) 
-			scambia(&v[p],&v[n-1]);
+		if (p < n - 1)
+			scambia(&v[p], &(v[n - 1]));
 		n--;
 	}
 }
@@ -26,7 +28,7 @@ int trovaPosMax(int v[], int n)
 {
 	int i, posMax = 0;
 	for (i = 1; i < n; i++)
-		if (v[posMax] < v[i]) 
+		if (v[posMax] < v[i])
 			posMax = i;
 	return posMax;
 }
@@ -40,14 +42,15 @@ void bubbleSort(int v[], int n)
 	{
 		ordinato = 1;
 		for (i = 0; i < n - 1; i++)
-			if (v[i]>v[i + 1]) 	
+			if (v[i] > v[i + 1])
 			{
-				scambia(&v[i], &v[i + 1]);
+				scambia(&(v[i]), &(v[i + 1]));
 				ordinato = 0;
 			}
 		n--;
 	}
 }
+
 
 //
 
@@ -56,7 +59,7 @@ void insOrd(int v[], int pos)
 	int i = pos - 1, x = v[pos];
 	while (i >= 0 && x < v[i]) 
 	{
-		v[i + 1]= v[i]; /* crea lo spazio */
+		v[i + 1] = v[i]; /* crea lo spazio */
 		i--;
 	}
 	v[i + 1] = x; /* inserisce l’elemento */

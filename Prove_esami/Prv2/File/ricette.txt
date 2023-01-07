@@ -1,0 +1,14 @@
+daiquiri1 3 29 40 28
+mojito 3 61 29 25
+negroni1 3 27 36 38
+ginTonic1 2 34 41
+boulevardier 3 38 23 27
+negroni2 3 38 27 35
+margarita 3 29 26 62
+daiquiri2 3 21 29 40
+oldfashioned 4 39 24 63 64
+ginTonic2 2 35 41
+ginTonic3 2 65 41
+whiskySour1 4 23 37 40 66
+whiskySour2 3 30 37 40
+caipirinha 3 29 25 67

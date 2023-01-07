@@ -2,7 +2,7 @@
 #ifndef ORDINAMENTO_H
 
     #define ORDINAMENTO_H
-
+    
     void scambia(int *a, int *b);
 
     void naiveSort(int v[], int n);

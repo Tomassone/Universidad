@@ -10,7 +10,7 @@
 
 	boolean isLess(element, element);
 	boolean isEqual(element, element);
-	element getElement(void);
+	element getElement(void); //RICEVO DA INPUT
 	void printElement(element);
 
 #endif 
