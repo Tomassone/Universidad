@@ -5,6 +5,7 @@
 
 	#include <stdio.h>
 	#include <stdlib.h>
+	#include <string.h>
 
 	typedef struct
 	{
@@ -32,4 +33,6 @@
 
 	void stampaIngredienti(Ingrediente* i, int dimI);
 	
+	Ingrediente trova(int id, Ingrediente* ing, int dimI);
+
 #endif

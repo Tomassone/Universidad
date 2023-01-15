@@ -38,5 +38,13 @@
 	list leggiRicette(char* nomefile);
 
 	//list insord_p(element el, list l);
+	
+	void stampaRicette(list ricette);
+
+	void stampaBarista(list ricette, Ingrediente* ing, int dimI);
+
+	float prezzoCocktail(char* nomeCocktail, Ingrediente* ing, int dimI, list ricette);
+
+	float prezzoCocktail_dx(char* nomeCocktail, Ingrediente* ing, int dimI, list ricette);
 
 #endif

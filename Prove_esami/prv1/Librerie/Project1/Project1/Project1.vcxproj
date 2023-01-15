@@ -18,6 +18,26 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\Librerie\array_manipulation.c" />
+    <ClCompile Include="..\..\..\..\..\Librerie\element.c" />
+    <ClCompile Include="..\..\..\..\..\Librerie\file.c" />
+    <ClCompile Include="..\..\..\..\..\Librerie\list.c" />
+    <ClCompile Include="..\..\..\..\..\Librerie\main.c" />
+    <ClCompile Include="..\..\..\..\..\Librerie\modulo.c" />
+    <ClCompile Include="..\..\..\..\..\Librerie\ordinamento.c" />
+    <ClCompile Include="..\..\..\..\..\Librerie\string_manipulation.c" />
+    <ClCompile Include="..\..\..\..\..\Librerie\test.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\Librerie\array_manipulation.h" />
+    <ClInclude Include="..\..\..\..\..\Librerie\element.h" />
+    <ClInclude Include="..\..\..\..\..\Librerie\file.h" />
+    <ClInclude Include="..\..\..\..\..\Librerie\list.h" />
+    <ClInclude Include="..\..\..\..\..\Librerie\modulo.h" />
+    <ClInclude Include="..\..\..\..\..\Librerie\ordinamento.h" />
+    <ClInclude Include="..\..\..\..\..\Librerie\string_manipulation.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -126,22 +146,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\Librerie\Array\array_manipulation.h" />
-    <ClInclude Include="..\..\..\..\..\Librerie\Elemento\element.h" />
-    <ClInclude Include="..\..\..\..\..\Librerie\Liste\list.h" />
-    <ClInclude Include="..\..\..\..\..\Librerie\Ordinamento\ordinamento.h" />
-    <ClInclude Include="..\..\..\..\..\Librerie\Stringhe\string_manipulation.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\Librerie\Array\array_manipulation.c" />
-    <ClCompile Include="..\..\..\..\..\Librerie\Elemento\element_float.c" />
-    <ClCompile Include="..\..\..\..\..\Librerie\Elemento\element_int.c" />
-    <ClCompile Include="..\..\..\..\..\Librerie\Elemento\element_string.c" />
-    <ClCompile Include="..\..\..\..\..\Librerie\Liste\list.c" />
-    <ClCompile Include="..\..\..\..\..\Librerie\Ordinamento\ordinamento.c" />
-    <ClCompile Include="..\..\..\..\..\Librerie\Stringhe\string_manipulation.c" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

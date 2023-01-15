@@ -1,4 +1,6 @@
 
+#define _CRT_SECURE_NO_DEPRECATE
+
 #include "element.h"
 
 Ingrediente* leggiIngredienti(char* nomefile, int* dimI)
@@ -15,15 +17,16 @@ Ingrediente* leggiIngredienti(char* nomefile, int* dimI)
 	else
 	{
 		*dimI = 0;
-		while (fscanf("%d %s %f %d/%d/%d", &(temp.id), temp.nome, &(temp.prezzo), &(temp.data_scadenza.anno), &(temp.data_scadenza.mese), &(temp.data_scadenza.giorno)) == 6)
+		while (fscanf(fp, "%d %s %f %d/%d/%d", &(temp.id), temp.nome, &(temp.prezzo), &(temp.data_scadenza.anno), &(temp.data_scadenza.mese), &(temp.data_scadenza.giorno)) == 6)
 			*dimI = *dimI + 1;
 		rewind(fp);
-		result = (Ingrediente*)malloc(*dimI * sizeof(Ingrediente));
+		result = (Ingrediente*) malloc(*dimI * sizeof(Ingrediente));
 		for (i = 0; i < *dimI; i++)
 		{
-			fscanf("%d %s %f %d/%d/%d", &(temp.id), temp.nome, &(temp.prezzo), &(temp.data_scadenza.anno), &(temp.data_scadenza.mese), &(temp.data_scadenza.giorno));
+			fscanf(fp, "%d %s %f %d/%d/%d", &(temp.id), temp.nome, &(temp.prezzo), &(temp.data_scadenza.anno), &(temp.data_scadenza.mese), &(temp.data_scadenza.giorno));
 			result[i] = temp;
 		}
+		fclose(fp);
 		return result;
 	}
 }
@@ -35,8 +38,21 @@ void stampaIngredienti(Ingrediente* i, int dimI)
 	{
 		stampaIngredienti(i, dimI - 1);
 		temp = i[dimI - 1];
-		printf("%d %s %f %d/%d/%d", (temp.id), temp.nome, (temp.prezzo), (temp.data_scadenza.anno), (temp.data_scadenza.mese), (temp.data_scadenza.giorno));
+		printf("%d %s %f %02d/%02d/%02d\n", (temp.id), temp.nome, (temp.prezzo), (temp.data_scadenza.anno), (temp.data_scadenza.mese), (temp.data_scadenza.giorno));
 	}
 	else
 		printf("\n");
+}
+
+Ingrediente trova(int id, Ingrediente* ing, int dimI)
+{
+	int i;
+	Ingrediente not_found;
+	for (i = 0; i < dimI; i++)
+	{
+		if (ing[i].id == id)
+			return ing[i];
+	}
+	strcpy(not_found.nome, "sconosciuto");
+	return not_found;
 }

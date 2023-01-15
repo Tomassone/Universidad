@@ -1,0 +1,3 @@
+﻿  main.c
+C:\Users\cosot\Desktop\Programmazione\Sorgenti\Universidad\Prove_esami\Prv2\Prv2\main.c(10,14): warning C4101: 'temp': variabile locale senza riferimenti
+  Prv2.vcxproj -> C:\Users\cosot\Desktop\Programmazione\Sorgenti\Universidad\Prove_esami\Prv2\x64\Debug\Prv2.exe

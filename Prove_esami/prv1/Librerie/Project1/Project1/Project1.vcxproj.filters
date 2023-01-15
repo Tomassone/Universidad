@@ -15,43 +15,55 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\Librerie\Ordinamento\ordinamento.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\Librerie\Stringhe\string_manipulation.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\Librerie\Elemento\element.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\Librerie\Array\array_manipulation.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\Librerie\Liste\list.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
+    <ClCompile Include="..\..\..\..\..\Librerie\array_manipulation.c">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Librerie\list.c">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Librerie\ordinamento.c">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Librerie\string_manipulation.c">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Librerie\test.c">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Librerie\file.c">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Librerie\element.c">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Librerie\main.c">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Librerie\modulo.c">
+      <Filter>File di origine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\Librerie\Elemento\element_string.c">
-      <Filter>File di origine</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\Librerie\Elemento\element_float.c">
-      <Filter>File di origine</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\Librerie\Elemento\element_int.c">
-      <Filter>File di origine</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\Librerie\Liste\list.c">
-      <Filter>File di origine</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\Librerie\Ordinamento\ordinamento.c">
-      <Filter>File di origine</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\Librerie\Array\array_manipulation.c">
-      <Filter>File di origine</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\Librerie\Stringhe\string_manipulation.c">
-      <Filter>File di origine</Filter>
-    </ClCompile>
+    <ClInclude Include="..\..\..\..\..\Librerie\element.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Librerie\array_manipulation.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Librerie\list.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Librerie\ordinamento.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Librerie\string_manipulation.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Librerie\file.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Librerie\modulo.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
