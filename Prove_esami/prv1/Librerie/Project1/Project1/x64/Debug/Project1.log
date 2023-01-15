@@ -1,2 +1,15 @@
-﻿  ordinamento.c
-  Project1.vcxproj -> C:\Users\cosot\Desktop\Programmazione\Sorgenti\Universidad\Prove_esami\prv1\Librerie\Project1\x64\Debug\Project1.exe
+﻿  array_manipulation.c
+  element.c
+  file.c
+C:\Users\cosot\Desktop\Programmazione\Sorgenti\Universidad\Librerie\file.c(10,10): warning C4101: 'temp': variabile locale senza riferimenti
+C:\Users\cosot\Desktop\Programmazione\Sorgenti\Universidad\Librerie\file.c(47,6): warning C4101: 'temp': variabile locale senza riferimenti
+  list.c
+  main.c
+  ordinamento.c
+  test.c
+  Generazione del codice in corso...
+C:\Users\cosot\Desktop\Programmazione\Sorgenti\Universidad\Librerie\file.c(38): error C4700: utilizzata variabile locale 'temp' non inizializzata
+C:\Users\cosot\Desktop\Programmazione\Sorgenti\Universidad\Librerie\file.c(70): error C4700: utilizzata variabile locale 'result' non inizializzata
+C:\Users\cosot\Desktop\Programmazione\Sorgenti\Universidad\Librerie\element.c(12): warning C4716: 'isEqual': deve restituire un valore
+C:\Users\cosot\Desktop\Programmazione\Sorgenti\Universidad\Librerie\element.c(27): warning C4716: 'getElement': deve restituire un valore
+C:\Users\cosot\Desktop\Programmazione\Sorgenti\Universidad\Librerie\element.c(20): warning C4716: 'isLess': deve restituire un valore

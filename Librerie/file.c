@@ -7,7 +7,7 @@ element* array_from_file(char nomefile[], int* dim)
 {
 	int i;
 	element* result;
-	element temp = 0;
+	element temp;
 	FILE* fp = fopen(nomefile, "r");
 	*dim = 0;
 	if (fp != NULL)
@@ -32,7 +32,7 @@ element* array_from_file(char nomefile[], int* dim)
 
 list list_from_file(FILE* fp)
 {
-	element temp = 0;
+	element temp;
 	list result = emptylist();
 	while (1/*fscanf(fp, "%d", &temp) == 1*/)
 		result = cons(temp, result);
@@ -43,7 +43,7 @@ list list_from_file(FILE* fp)
 element element_from_file(FILE* fp)
 {
 	int i = 0;
-	element result = 0;
+	element result;
 	int temp;
 	if (fp != NULL)
 	{
@@ -124,7 +124,7 @@ element* array_from_binfile(FILE* f, element* V, int *dim)
 
 list list_from_binfile(FILE* fp)
 {
-	element temp = 0;
+	element temp;
 	list result = emptylist();
 	while (fread(&temp, sizeof(element), 1, fp) > 0)
 	{

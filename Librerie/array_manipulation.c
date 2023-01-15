@@ -6,7 +6,7 @@
 void empty_array(element* array, int dim)
 {
 	int i;
-	element	temp = 0;
+	element	temp;
 	for (i = 0; i < dim; i++)
 		assignElement(&(array[i]), &(temp));
 	printf("\n");
@@ -15,7 +15,7 @@ void empty_array(element* array, int dim)
 void read_array(element* array, int dim)
 {
 	int i;	
-	element	temp = 0;
+	element	temp;
 	for (i = 0; i < dim; i++)
 	{
 		printf("Digita un elemento dell'array: ");

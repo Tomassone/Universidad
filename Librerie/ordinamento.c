@@ -92,7 +92,7 @@ void merge(element v[], int i1, int i2, int fine, element vout[])
 	int i = i1, j = i2, k = i1;
 	while (i <= i2 - 1 && j <= fine) 
 	{
-		if (v[i] < v[j])
+		if (isLess(v[i], v[j]))
 			assignElement(&(vout[k]), &(v[i++]));
 		else
 			assignElement(&(vout[k]), &(v[j++]));

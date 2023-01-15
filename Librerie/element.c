@@ -5,18 +5,18 @@
 
 boolean isEqual(element e1, element e2)
 {
-    if (e1 == e2)
-       return TRUE;
-    else
-        return FALSE;
+    //if (e1 == e2)
+    //   return TRUE;
+    //else
+     //   return FALSE;
 }
 
 boolean isLess(element e1, element e2)
 {
-    if (e1 < e2)
-       return TRUE;
-    else
-        return FALSE;
+    //if (e1 < e2)
+     //  return TRUE;
+   // else
+      //  return FALSE;
 }
 
 element getElement()
@@ -28,10 +28,10 @@ element getElement()
 
 void printElement(element el)
 {
-    printf("%d ", el);
+    //printf("%d ", el);
 }
 
 void assignElement(element* e1, element* e2)
 {
-    *e1 = *e2;
+    //*e1 = *e2;
 }

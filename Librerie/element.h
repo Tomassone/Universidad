@@ -8,6 +8,7 @@
 	#include <string.h>
 
 	typedef int element;
+
 	#define TRUE 1
 	#define FALSE 0
 	typedef int boolean;
