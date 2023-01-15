@@ -1,3 +1,3 @@
 # Universidad
 
-Esercizi vari fatti in laboratorio per l'uni (fondamenti di informatica 1).
+Esercizi vari fatti in laboratorio per l'università (fondamenti di informatica 1).
