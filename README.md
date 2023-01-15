@@ -1,3 +1,3 @@
 # Universidad
 
-Esercizi vari fatti in laboratorio per l'università (fondamenti di informatica 1).
+Esercizi vari fatti in laboratorio per l'università (Ingegneria Informatica a Bologna) (esame di Fondamenti di Informatica 1) + librerie per l'esame di laboratorio.
