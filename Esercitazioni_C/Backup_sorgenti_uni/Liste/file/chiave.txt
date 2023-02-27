@@ -1,0 +1,5 @@
+PaoloBellavista ..//Liste//file//binario.dat
+PaolaMello ..//Liste//file//binario.dat
+FedericoChesani ..//Liste//file//binario.dat
+CarloGiannelli ..//Liste//file//binario.dat
+MarcoMontali ..//Liste//file//binario.dat
