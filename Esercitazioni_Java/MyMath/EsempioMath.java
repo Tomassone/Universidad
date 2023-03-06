@@ -15,6 +15,7 @@ public class EsempioMath
 		int b = Integer.parseInt(args[1]);
 		int mcd = MyMath.mcd(a,b);
 		int mcm = MyMath.mcm(a,b);
+		MyMathTest.main();
 		System.out.println("Questo è il MCD: " + mcd + ".");
 		System.out.println("Questo è il mcm: " + mcm + ".");
 	}
