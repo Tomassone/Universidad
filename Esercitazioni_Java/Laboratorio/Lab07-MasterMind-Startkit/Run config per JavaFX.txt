@@ -1,0 +1,1 @@
+--module-path = "C:\applicativi\moduli\javafx-sdk-19\lib" --add-module = javafx.controls
