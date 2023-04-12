@@ -39,7 +39,7 @@ public class Rate
 	{
 		int i; //la inizializzo fuori dal for perchè il suo valore mi serve anche a ciclo concluso.
 		for (i = 0; !bands[i].isInBand(dateTime); i++);
-		return bands[i].getCostPerInterval();
+			return bands[i].getCostPerInterval();
 	}
 	
 	public String getName()

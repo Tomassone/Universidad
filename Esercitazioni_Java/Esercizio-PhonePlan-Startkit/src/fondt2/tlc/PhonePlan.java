@@ -15,7 +15,7 @@ public class PhonePlan
 	
 	public boolean isValid()
 	{
-		for (int i = 0; i < this.getRates().length; i++)
+		for (int i = 0; i < this.getRates().length - 1; i++)
 			if (!this.rates[i].isValid()) //se anche solo una delle tariffe non è valida, il piano telefonico non è valido.
 				return false;
 		return true;
