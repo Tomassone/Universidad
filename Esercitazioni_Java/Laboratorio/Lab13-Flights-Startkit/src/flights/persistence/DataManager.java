@@ -47,7 +47,7 @@ public class DataManager
 				
 		for (City cittadina : this.citiesReader.read(lettoreCities))
 			for (Airport aereoporto: cittadina.getAirports())
-				this.airportMap.put(cittadina.getCode(), aereoporto);
+				this.airportMap.put(aereoporto.getCode(), aereoporto);
 		
 		for (Aircraft veivolo : this.aircraftsReader.read(lettoreAircrafts))
 				this.aircraftMap.put(veivolo.getCode(), veivolo);

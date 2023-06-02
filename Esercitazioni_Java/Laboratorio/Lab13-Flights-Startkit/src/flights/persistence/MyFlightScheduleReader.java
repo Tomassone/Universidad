@@ -27,6 +27,9 @@ public class MyFlightScheduleReader implements FlightScheduleReader
 	{
 		Collection<DayOfWeek> result = new ArrayList<DayOfWeek>();
 		
+		if (days.length() != 7)
+			throw new BadFileFormatException();
+		
 		for (int i = 0; i < days.length(); i++)
 		{
 			if (days.charAt(i) != '-')
@@ -43,7 +46,11 @@ public class MyFlightScheduleReader implements FlightScheduleReader
 	private FlightSchedule readSchedule(BufferedReader reader, Map<String, Airport> airportMap, Map<String, Aircraft> aircraftMap) throws IOException, BadFileFormatException
 	{
 		String lineaLetta = reader.readLine();
+		if (lineaLetta == null || lineaLetta.trim().isEmpty())
+			return null;
+		
 		StringTokenizer st = new StringTokenizer(lineaLetta, ",");
+		
 		String idVolo = st.nextToken();
 		//System.out.println(idVolo);
 		//System.out.println(arrivalTime);
@@ -102,11 +109,14 @@ public class MyFlightScheduleReader implements FlightScheduleReader
 	{
 		Collection<FlightSchedule> result = new ArrayList<FlightSchedule>();
 		BufferedReader bf = new BufferedReader(reader);
+		FlightSchedule tempSchedule;
 		bf.mark(0);
 		do
 		{
 			bf.reset();
-			result.add(this.readSchedule(bf, airportMap, aircraftMap));
+			tempSchedule = this.readSchedule(bf, airportMap, aircraftMap);
+			if (tempSchedule != null)
+				result.add(tempSchedule);
 			bf.mark(0);
 		}
 		while(bf.readLine() != null);
