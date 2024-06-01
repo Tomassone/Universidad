@@ -12,11 +12,11 @@ do
 			owner=$(ls "-l" "$file" | "awk" '{ print $3 }')
 			if [ "$owner" = "$1" ]
 			then
-				n_x=exp("$n_x" + "1");
+				n_x=$(expr "$n_x" + "1")
 			fi
 			if [ "$owner" = "$2" ]
 			then
-				n_y=exp("$n_y" + "1");
+				n_y=$(expr "$n_y" + "1")
 			fi
 			;;
 		*)
@@ -27,5 +27,7 @@ do
     fi
 done
 
-echo $n_x
-echo $n_y
+if [ "$n_x" -gt "$n_y" ] 
+then
+	echo "$(pwd) $(expr "$n_x" - "$n_y")"  >> "$HOME"/esame
+fi
