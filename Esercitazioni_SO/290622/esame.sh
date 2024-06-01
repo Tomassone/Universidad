@@ -2,42 +2,26 @@
 
 path_rec="./recursive.sh"
 
-if [[ ! $# = '2' ]]
+if [[ ! $# = '4' ]]
 then
 	echo 'Numero di argomenti passanti errato.'
-	exit
+	exit 1
 fi
 
-case "$1" in
-/*) 
-    #la directory inizia per /
-    #controllo anche che sia davvero una directory esistente 
-    if [[ ! -d "$1" ]]
-	then
-		echo 'Il primo argomento non risulta una directory.'
-		exit 3
-	fi;;
+case "$3" in
+.*)
+	;;
 *)
-    #il nome della directory non inizia per /, quindi non è un path assoluto
-    echo "$1 non è una directory assoluta." 
-    exit 4;;
+    echo "$3 non è un'estensione." 
+    exit 2;;
 esac
 
-case "$1" in
-/*) 
-    #la directory inizia per /
-    #controllo anche che sia davvero una directory esistente  
-    if [[ ! -d "$2" ]]
-	then
-		echo 'Il secondo argomento non risulta una directory.'
-		exit 3
-	fi;;
-*)
-    #il nome della directory non inizia per /, quindi non è un path assoluto
-    echo "$2 non è una directory assoluta." 
-    exit 4;;
-esac
+if [[ ! -d "$4" ]]
+then
+	echo 'Il quarto argomento non risulta una directory.'
+	exit 3
+fi
 
 #invoco il secondo script:
 
-"$path_rec" "$1" "$2"
+"$path_rec" "$1" "$2" "$3" "$4"
