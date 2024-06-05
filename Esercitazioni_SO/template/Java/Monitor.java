@@ -38,9 +38,9 @@ public class Monitor {
 		Elemento1Canale[OUT] = 0;
 		Elemento2Canale[IN] = 0;
 		Elemento2Canale[OUT] = 0;
-		Elemento1Cond[IN] = lock.newCondition();
-		Elemento3Cond[OUT] = lock.newCondition();
 		Elemento3Cond[IN] = lock.newCondition();
+		Elemento3Cond[OUT] = lock.newCondition();
+		Elemento2Cond[IN] = lock.newCondition();
 		Elemento2Cond[OUT] = lock.newCondition();
 		Elemento1Cond[IN] = lock.newCondition();
 		Elemento1Cond[OUT] = lock.newCondition();
