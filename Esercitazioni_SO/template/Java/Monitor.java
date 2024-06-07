@@ -152,9 +152,9 @@ public class Monitor {
 				|| (Elemento2Canale[(1-direction)] != 0) || (Elemento3Sospesi[direction] != 0)
 				|| (Elemento2Sospesi[direction] != 0) || (Elemento2Canale[direction] != 0))
 		{
-			Elemento1Sospesi[direction]++;
-			Elemento1Cond[direction].await();
-			Elemento1Sospesi[direction]--;
+			Elemento2Sospesi[direction]++;
+			Elemento2Cond[direction].await();
+			Elemento2Sospesi[direction]--;
 		}
 		
 		/*if (nPostiLiberiS != 0)
