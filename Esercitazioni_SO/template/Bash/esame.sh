@@ -51,7 +51,31 @@ esac
 #controllo numerico
 if [[ ! ($num =~ ^[0-9]+$) ]] #controllo che l'argomento sia un intero maggiore di 0.
     then echo "Argomento 2 non intero!"; exit;
+fi
 
 #invoco il secondo script:
 
 "$path_rec" "$1" "$2" "$3" "$4"
+
+: '
+shift 3 #scarto i primi tre parametri in ingresso
+
+for dir in "$@"; do
+    if ! [[ -d "$dir" ]]; then
+        echo "Errore: $dir non esiste o non è una cartella" 1>&2
+        exit 1
+    fi
+    if ! [[ "$dir" = /* ]]; then
+        echo "Errore: $dir deve essere un path assoluto" 1>&2
+        exit 1
+    fi
+done
+
+for i in `seq $M` ; do
+    for dir in "$@"; do
+        echo "Launching recursion for $dir"
+        "$recursive_command" "$fileToSearch" "$dir" "$output"
+    done
+    sleep $S
+done
+'
