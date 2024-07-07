@@ -26,17 +26,14 @@ void taskOne()
 
 void sig_usr1_handler()
 {
-    //printf("Son P0 e ho ricevuto un messaggio da P1 kek\n");
-    kill(pid1, SIGKILL);
-    kill(pid2, SIGKILL);
-    printf("<<Finito!>>\n");
+    printf("Sono P2. il mio PID %d. Il numero di occorrenze è divisibile per bobbo\n", getpid());
     exit(1);
 }
 
 void sig_usr2_handler()
 {
-    //printf("Son P2 e ho ricevuto un messaggio da P1 kek\n");
-    kill(pid2, SIGUSR2);
+    printf("Sono P2. il mio PID è %d. Il numero di occorrenze non è divisibile per bobbo\n", getpid());
+    exit(1);
 }
 
 void sig_usrx_handler()
@@ -63,6 +60,9 @@ int main(int argc, char *argv[])
         exit(2);
     }
     
+    signal(SIGUSR1, sig_usr1_handler);
+    signal(SIGUSR2, sig_usr2_handler);
+    
     int pid1 = 0, pid2 = 0;
     int fd = open(argv[1], O_RDONLY, 0777);
     int fd_p[2];
@@ -81,15 +81,21 @@ int main(int argc, char *argv[])
         if (pid2 != 0)
         {
 			char string;
+			pause();
 			read(fd_p[0], &string, 1);
 			printf("%d\n", string);
+			if (string % atoi(argv[3]) == 0)
+				kill(pid2, SIGUSR1);
+			else
+				kill(pid2, SIGUSR2);
 		}
+		pause();
     }
     else //codice eseguito da p1
     {
 		close(1);
 		dup(fd_p[1]);
-		execl("/bin/grep", "grep", "-c", argv[2], argv[1], (char*) 0);
+		execlp("grep", "grep", "-c", argv[2], argv[1], (char*) 0);
 	}
 
     /*int chance = 0;
