@@ -1,0 +1,59 @@
+21-Nov-2024 16:21:57.083 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.96
+21-Nov-2024 16:21:57.095 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Oct 3 2024 19:44:30 UTC
+21-Nov-2024 16:21:57.097 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.96.0
+21-Nov-2024 16:21:57.097 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 11
+21-Nov-2024 16:21:57.099 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+21-Nov-2024 16:21:57.100 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+21-Nov-2024 16:21:57.100 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Users\meris\OneDrive\Desktop\java\jdk-19.0.2
+21-Nov-2024 16:21:57.100 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           19.0.2+7-44
+21-Nov-2024 16:21:57.101 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+21-Nov-2024 16:21:57.103 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\meris\OneDrive\Desktop\apache-tomcat-9.0.96
+21-Nov-2024 16:21:57.103 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\meris\OneDrive\Desktop\apache-tomcat-9.0.96
+21-Nov-2024 16:21:57.194 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+21-Nov-2024 16:21:57.194 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+21-Nov-2024 16:21:57.194 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+21-Nov-2024 16:21:57.194 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+21-Nov-2024 16:21:57.194 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+21-Nov-2024 16:21:57.196 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\meris\OneDrive\Desktop\apache-tomcat-9.0.96\conf\logging.properties
+21-Nov-2024 16:21:57.196 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+21-Nov-2024 16:21:57.196 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+21-Nov-2024 16:21:57.196 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+21-Nov-2024 16:21:57.196 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+21-Nov-2024 16:21:57.198 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\meris\OneDrive\Desktop\apache-tomcat-9.0.96
+21-Nov-2024 16:21:57.198 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\meris\OneDrive\Desktop\apache-tomcat-9.0.96
+21-Nov-2024 16:21:57.198 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\meris\OneDrive\Desktop\apache-tomcat-9.0.96\temp
+21-Nov-2024 16:21:58.279 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.3.1] using APR version [1.7.4].
+21-Nov-2024 16:21:58.279 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+21-Nov-2024 16:21:58.284 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+21-Nov-2024 16:21:58.302 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+21-Nov-2024 16:21:59.273 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+21-Nov-2024 16:21:59.340 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [3158] milliseconds
+21-Nov-2024 16:21:59.478 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+21-Nov-2024 16:21:59.478 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.96]
+21-Nov-2024 16:21:59.555 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [C:\Users\meris\OneDrive\Desktop\apache-tomcat-9.0.96\webapps\02_TecWeb.war]
+21-Nov-2024 16:22:00.777 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+21-Nov-2024 16:22:01.009 WARNING [main] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [167] milliseconds.
+21-Nov-2024 16:22:01.062 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [C:\Users\meris\OneDrive\Desktop\apache-tomcat-9.0.96\webapps\02_TecWeb.war] has finished in [1,507] ms
+21-Nov-2024 16:22:01.116 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [C:\Users\meris\OneDrive\Desktop\apache-tomcat-9.0.96\webapps\02_TecWeb2.war]
+21-Nov-2024 16:22:01.400 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+21-Nov-2024 16:22:01.413 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [C:\Users\meris\OneDrive\Desktop\apache-tomcat-9.0.96\webapps\02_TecWeb2.war] has finished in [298] ms
+21-Nov-2024 16:22:01.756 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [C:\Users\meris\OneDrive\Desktop\apache-tomcat-9.0.96\webapps\03a_TecWeb.war]
+21-Nov-2024 16:22:01.989 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [C:\Users\meris\OneDrive\Desktop\apache-tomcat-9.0.96\webapps\03a_TecWeb.war] has finished in [232] ms
+21-Nov-2024 16:22:02.052 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [C:\Users\meris\OneDrive\Desktop\apache-tomcat-9.0.96\webapps\03b_TecWeb.war]
+21-Nov-2024 16:22:02.373 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [C:\Users\meris\OneDrive\Desktop\apache-tomcat-9.0.96\webapps\03b_TecWeb.war] has finished in [321] ms
+21-Nov-2024 16:22:02.402 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [C:\Users\meris\OneDrive\Desktop\apache-tomcat-9.0.96\webapps\05_TecWeb.war]
+21-Nov-2024 16:22:02.645 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [C:\Users\meris\OneDrive\Desktop\apache-tomcat-9.0.96\webapps\05_TecWeb.war] has finished in [244] ms
+21-Nov-2024 16:22:02.889 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [C:\Users\meris\OneDrive\Desktop\apache-tomcat-9.0.96\webapps\prova.war]
+21-Nov-2024 16:22:03.106 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [C:\Users\meris\OneDrive\Desktop\apache-tomcat-9.0.96\webapps\prova.war] has finished in [217] ms
+21-Nov-2024 16:22:03.119 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\meris\OneDrive\Desktop\apache-tomcat-9.0.96\webapps\docs]
+21-Nov-2024 16:22:03.332 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\meris\OneDrive\Desktop\apache-tomcat-9.0.96\webapps\docs] has finished in [213] ms
+21-Nov-2024 16:22:03.332 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\meris\OneDrive\Desktop\apache-tomcat-9.0.96\webapps\examples]
+21-Nov-2024 16:22:07.506 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\meris\OneDrive\Desktop\apache-tomcat-9.0.96\webapps\examples] has finished in [4,172] ms
+21-Nov-2024 16:22:07.506 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\meris\OneDrive\Desktop\apache-tomcat-9.0.96\webapps\host-manager]
+21-Nov-2024 16:22:07.664 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\meris\OneDrive\Desktop\apache-tomcat-9.0.96\webapps\host-manager] has finished in [158] ms
+21-Nov-2024 16:22:07.671 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\meris\OneDrive\Desktop\apache-tomcat-9.0.96\webapps\manager]
+21-Nov-2024 16:22:07.821 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\meris\OneDrive\Desktop\apache-tomcat-9.0.96\webapps\manager] has finished in [150] ms
+21-Nov-2024 16:22:07.822 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\meris\OneDrive\Desktop\apache-tomcat-9.0.96\webapps\ROOT]
+21-Nov-2024 16:22:07.923 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\meris\OneDrive\Desktop\apache-tomcat-9.0.96\webapps\ROOT] has finished in [101] ms
+21-Nov-2024 16:22:07.937 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+21-Nov-2024 16:22:08.074 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [8723] milliseconds

@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+table {
+    border: 1px solid black;
+}
+.cell {
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    background-color: grey;
+}
+
+.successo {
+    background-color: blue !important;
+}
+
+.fallimento {
+    background-color: yellow !important;
+}

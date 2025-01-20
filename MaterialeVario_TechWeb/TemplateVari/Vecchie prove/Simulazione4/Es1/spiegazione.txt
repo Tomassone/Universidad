@@ -1,0 +1,86 @@
+### Domande Finali e Risposte
+
+---
+
+#### **Operazioni concorrenti che possono portare a inconsistenze?**
+
+Sì, ci possono essere operazioni concorrenti che portano a inconsistenze. Questo può accadere quando più richieste accedono e modificano risorse condivise lato server senza un'adeguata gestione della concorrenza.
+
+---
+
+#### **Quali sono i rischi di inconsistenza e in quali condizioni si possono verificare?**
+
+1. **Accesso concorrente alla lista dei file:**
+   - Se due utenti accedono contemporaneamente all'applicazione e il server tenta di rigenerare la lista dei file senza verificarne l'esistenza o senza una gestione appropriata della sessione, potrebbero verificarsi incongruenze.
+   - **Condizione**: Si verifica se il parametro di inizializzazione della directory (`<context-param>`) viene letto e modificato contemporaneamente senza un'adeguata sincronizzazione.
+
+2. **Accesso simultaneo ai contatori (servlet ed EJB):**
+   - Quando la servlet e l'EJB session bean accedono ai file per il conteggio contemporaneamente, potrebbero esserci problemi di lettura parziale o dati non aggiornati se i file vengono modificati durante il conteggio.
+   - **Condizione**: Questo accade se i file vengono aggiornati o sovrascritti lato server mentre i contatori sono in esecuzione. Ad esempio:
+     - Se un file viene scritto da un'altra operazione durante il conteggio, i risultati potrebbero essere inconsistenti.
+     - Se il conteggio del servlet e del bean session viene eseguito in modo indipendente senza verificare lo stato della risorsa.
+
+3. **Sessioni multiple e uso condiviso di risorse:**
+   - Se più utenti interagiscono contemporaneamente con il server e vengono utilizzate variabili statiche o risorse condivise senza meccanismi di sincronizzazione, ciò può portare a dati sovrascritti o letture non corrette.
+   - **Condizione**: Si verifica se il contatore servlet o il bean session utilizza uno stato globale o una variabile statica per mantenere i risultati.
+
+---
+
+#### **Soluzioni per mitigare i rischi**
+
+1. **Sincronizzazione dei thread:**
+   - Implementare una gestione sincronizzata (ad esempio con blocchi `synchronized` in Java) per l'accesso a risorse condivise come i file o i risultati intermedi.
+
+2. **Gestione dei dati immutabili:**
+   - Assicurarsi che i file da leggere siano immutabili durante la sessione di interazione. Una possibile soluzione è creare una copia temporanea dei file da analizzare.
+
+3. **Scope della sessione:**
+   - Utilizzare variabili di sessione per ciascun utente per evitare conflitti tra sessioni diverse.
+
+4. **Bean con gestione transazionale:**
+   - Per l'EJB session bean, utilizzare la gestione delle transazioni per garantire la consistenza dei dati durante il conteggio.
+
+---
+
+#### **Condizioni esatte nel codice**
+
+Nel file sorgente, i rischi di inconsistenza e le relative soluzioni possono essere commentati come segue:
+
+```java
+// Rischio: Accesso simultaneo alla lista dei file durante la rigenerazione.
+// Soluzione: Memorizzare la lista in una variabile di sessione per ogni utente.
+List<File> fileList = (List<File>) session.getAttribute("fileList");
+if (fileList == null) {
+    synchronized (this) {
+        fileList = generateFileListFromDir(contextDir); // Generazione sincronizzata
+        session.setAttribute("fileList", fileList);
+    }
+}
+
+// Rischio: Scritture concorrenti o modifiche ai file durante il conteggio.
+// Soluzione: Creare una copia temporanea dei file da leggere.
+File tempFile = new File(file.getPath() + "_temp");
+Files.copy(file.toPath(), tempFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+
+// Rischio: Variabili globali condivise tra sessioni multiple.
+// Soluzione: Utilizzare bean stateless per garantire la separazione delle sessioni.
+@Stateless
+public class UpperCaseCounterBean {
+    public int countUpperCaseCharacters(String filePath) {
+        // Conteggio sicuro senza dipendenza da variabili globali.
+    }
+}
+
+// Rischio: Risultati inconsistenti tra servlet ed EJB.
+// Soluzione: Confrontare i risultati solo dopo che entrambe le operazioni sono completate.
+int servletCount = countUsingServlet(file1, file2, file3);
+int beanCount = countUsingBean(file1, file2, file3);
+if (servletCount != beanCount) {
+    // Loggare l'inconsistenza per analisi futura.
+}
+```
+
+---
+
+### **Riepilogo**
+La gestione della concorrenza è fondamentale in applicazioni web come questa per evitare inconsistenze derivanti da accessi simultanei a risorse condivise. L'utilizzo di sessioni isolate, variabili immutabili e bean stateless può ridurre significativamente questi rischi.

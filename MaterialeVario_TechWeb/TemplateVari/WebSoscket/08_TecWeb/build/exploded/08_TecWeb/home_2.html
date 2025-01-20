@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Calcolatrice</title>
+         <script type="text/javascript" src="scripts/wsocket_2.js"></script>
+         <link type="text/css" href="styles/default.css" rel="stylesheet"></link>
+    </head>
+    <body>
+    	<form>
+			<p>Operando 1: <input type="text" id="op1" name="op1" onChange="updateValue(this)"></p>
+			<p>Operando 2: <input type="text" id="op2" name="op2" onChange="updateValue(this)"></p>
+			<p>Seleziona operatore: </p>
+			<p><input type="radio" name="op" value="+"> +</p>
+			<p><input type="radio" name="op" value="-"> -</p>
+			<p><input type="radio" name="op" value="/"> /</p>
+			<p><input type="radio" name="op" value="*"> *</p>
+			<p><input type="button" name="op" value="=" onclick="myFunction(event)"></p>
+			<p>Risultato: <input type="text" name="risultato" id="risultato"></p>
+		</form>
+    </body>
+</html>

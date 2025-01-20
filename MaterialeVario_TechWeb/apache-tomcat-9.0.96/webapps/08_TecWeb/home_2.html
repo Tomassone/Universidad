@@ -1,0 +1,34 @@
+
+<html>
+    <head>
+        <title>Calcolatrice2</title>
+         <script type="text/javascript" src="scripts/wsocket_2.js"></script>
+         <link type="text/css" href="styles/default.css" rel="stylesheet"></link>
+    </head>
+    <body>
+    	 <body>
+  
+    	<label>Primo operando</label>
+    	<input type="text" size="2" id="op1" name="num1" onkeyup="myUpdate('op1');"  ><br>	
+    	 <label>Primo operando</label>
+    	<input type="text" size="2" id="op2" name="num2"onkeyup="myUpdate('op1');"><br>	
+    	 Inserisci operazione: <br>
+    	 <input type="radio" id="add" name="op" value="+" >+<br>
+	     <input type="radio" id="diff" name="op" value="-" >-<br>
+	     <input type="radio" id="molt" name="op" value="*" >*<br>
+	     <input type="radio" id="div" name="op" value="/">/<br><br>
+	     
+	      <input type="button" value="=" onclick="myFunction()"><br><br>
+     <label>Risultato:</label>
+     <input type="text" name="ris" id="risultato" readonly><br>	
+    	</div>
+    	<div>
+    	 Risultato Precedente: <input id="oldRis" type="text" size="5" readonly><br><br>
+    	</div>
+    </body>
+    	
+    </body>
+
+   
+
+</html>

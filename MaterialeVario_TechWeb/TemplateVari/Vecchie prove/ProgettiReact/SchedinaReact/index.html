@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="StyleSheet" href="styles/style.css" type="text/css" media="all" />
+    <script src="./react-libs/react.js"></script>
+    <script src="./react-libs/react_dom.js"></script>
+    <script src="./react-libs/babel.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <!-- React components -->
+    <script src="./react-components/Section1.js" type="text/babel"></script>
+    <script src="./react-components/Section2.js" type="text/babel"></script>
+    <script src="./react-components/Section3.js" type="text/babel"></script>
+    <script src="./react-components/App.js" type="text/babel"></script>
+
+    <script type="text/babel">
+        ReactDOM.render(
+            <React.StrictMode>
+                <App />
+            </React.StrictMode>,
+            document.getElementById('root')
+        );
+    </script>
+</body>
+
+</html>

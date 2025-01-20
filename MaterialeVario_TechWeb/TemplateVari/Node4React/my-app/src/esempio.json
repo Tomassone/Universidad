@@ -1,0 +1,59 @@
+[
+      {
+        "nome": "Mario",
+        "cognome": "Rossi",
+        "indirizzo": "Via Ugo Bassi 1, Milano"
+      },
+      {
+        "nome": "Luigi",
+        "cognome": "Verdi",
+        "indirizzo": "Corso Italia 25, Torino"
+      },
+      {
+        "nome": "Carla",
+        "cognome": "Bianchi",
+        "indirizzo": "Via Ugo Bassi 1, Milano"
+      },
+      {
+        "nome": "Claudia",
+        "cognome": "Neri",
+        "indirizzo": "Via Garibaldi 10, Roma"
+      },
+      {
+        "nome": "Eleno",
+        "cognome": "Blu",
+        "indirizzo": "Viale della Repubblica 20, Napoli"
+      },
+      {
+        "nome": "Luca",
+        "cognome": "Gialli",
+        "indirizzo": "Via Veneto 15, Bologna"
+      },
+      {
+        "nome": "Sara",
+        "cognome": "Viola",
+        "indirizzo": "Largo Argentina 8, Palermo"
+      },
+      {
+        "nome": "Elena",
+        "cognome": "Fucsia",
+        "indirizzo": "Via Dante 30, Bari"
+      },
+      {
+        "nome": "Marta",
+        "cognome": "Argento",
+        "indirizzo": "Corso Vittorio 14, Firenze"
+      },
+      {
+        "nome": "Giorgio",
+        "cognome": "Oro",
+        "indirizzo": "Via Napoli 9, Napoli"
+      },
+      {
+        "nome": "Francesca",
+        "cognome": "Bronzo",
+        "indirizzo": "Via Ugo Bassi 8, Palermo"
+      }
+    ]
+
+  
