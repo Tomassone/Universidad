@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType name="imageType">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string">
+            <xs:element name="url" type="xs:string">
+            <xs:element name="link" type="xs:string">
+            <xs:element name="width" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="length" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="sourceType">
+        <xs:attribute name="url" type="xs:string" use="required">
+    </xs:complexType>
+    <xs:complexType name="enclosureType">
+        <xs:attribute name="url" type="xs:string" use="required">
+        <xs:attribute name="length" type="xs:string" use="required">
+        <xs:attribute name="type" type="xs:string" use="required">
+    </xs:complexType>
+    <xs:complexType name="categoryType">
+        <xs:attribute name="domain" type="xs:string" use="optional">
+    </xs:complexType>
+    <xs:complexType name="itemType">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="link" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="source" type="sourceType" minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="enclosure" type="enclosureType" minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="category" type="categoryType" minOccurs="0" maxOccurs="unbounded">
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="textInputType">
+        <xs:all>
+            <xs:element name="title" type="xs:string">
+            <xs:element name="description" type="xs:string">
+            <xs:element name="name" type="xs:string">
+            <xs:element name="link" type="xs:string">
+        </xs:all>
+    </xs:complexType>
+    <xs:complexType name="cloudType">
+        <xs:attribute name="domain" type="xs:string" use="required">
+        <xs:attribute name="port" type="xs:string" use="required">
+        <xs:attribute name="path" type="xs:string" use="required">
+        <xs:attribute name="registerProcedure" type="xs:string" use="required">
+        <xs:attribute name="protocol" type="xs:string" use="required">
+    </xs:complexType>
+    <xs:complexType name="hoursType">
+         <xs:sequence>
+            <xs:element name="hour" type="xs:string" minOccurs="1" maxOccurs="unbounded">
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="daysType">
+         <xs:sequence>
+            <xs:element name="day" type="xs:string" minOccurs="1" maxOccurs="unbounded">
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="channelType">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string">
+            <xs:element name="link" type="xs:string">
+            <xs:element name="description" type="xs:string">
+            <xs:element name="language" type="xs:string" minOccurs="0" maxOccurs="1">
+            <xs:element name="pubDate" type="xs:date" minOccurs="0" maxOccurs="1">
+            <xs:element name="lastBuildDate" type="xs:date" minOccurs="0" maxOccurs="1">
+            <xs:element name="docs" type="xs:string" minOccurs="0" maxOccurs="1">
+            <xs:element name="managingEditor" type="xs:string" minOccurs="0" maxOccurs="1">
+            <xs:element name="webMaster" type="xs:string" minOccurs="0" maxOccurs="1">
+            <xs:element name="skipHours" type="hoursType" minOccurs="0" maxOccurs="1">
+            <xs:element name="skipDays" type="daysType" minOccurs="0" maxOccurs="1">
+            <xs:element name="cloud" type="cloudType" minOccurs="0" maxOccurs="1">
+            <xs:element name="item" type="itemType" minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="rating" type="xs:integer" minOccurs="0" maxOccurs="1">
+            <xs:element name="image" type="imageType" minOccurs="0" maxOccurs="1">
+            <xs:element name="textInput" type="textInputType" minOccurs="0" maxOccurs="1">
+            <xs:element name="copyright" type="xs:string" minOccurs="0" maxOccurs="1">
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="rssType">
+        <xs:attribute name="version" type="xs:decimal" use="required"/>
+        <xs:sequence>
+            <xs:element name="channel" type="channelType">
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="rss" type="rssType"/>
+</xs:schema>

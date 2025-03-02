@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType name="bodyType">
+        <xs:sequence>
+            <xs:element name="paragraph" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="letterType">
+        <xs:attribute name="to" type="xs:string" use="required"/>
+        <xs:attribute name="from" type="xs:string" use="required"/>
+        <xs:attribute name="date" type="xs:date" use="required"/>
+        <xs:sequence>
+            <xs:element name="object" type="xs:string"/>
+            <xs:element name="formalGreeting" type="xs:string"/>
+            <xs:element name="body" type="bodyType"/>
+            <xs:element name="closingStatement" type="xs:string"/>
+            <xs:element name="signature" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="letter" type="letterType"/>
+</xs:schema>
