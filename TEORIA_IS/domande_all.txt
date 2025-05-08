@@ -1,0 +1,88 @@
+LEGENDA:
+h: file che inizia con cit di harry potter:	DomandePatella.pdf 			sha1: 72ac029534dae3e2e80244a05a08718611a8247b
+l: file di Karina: 							ingegneriaSoftwareQA.pdf 	sha1: 4e9412c3896da086d807a962322a5a276c080d30
+t: file di Kevin: 							FAQ_IS-T.pdf				sha1: 314f3a7050c4bc4715b197b7188b6fefc0d79bee
+p: file di Paolo:							Domande&Riposte.pdf			sha1: ecea1e58e69b92203176b1789c2cdc5a55a70dbd
+
+
+1.03 - PRINCIPI E CONCETTI OBJECT-ORIENTED
+# hltp # si esegua una classificazione del polimorfismo secondo cardelli-wegner e si mostri lâ€™implementazione del polimorfismo per inclusione.
+
+1.5 - INTRODUZIONE AL FRAMEWORK .NET
+# hl p # procedimento di compilazione ed esecuzione del codice all'interno del framework .net tramite il clr
+# h    # tecnologia com
+# h    # framework .net
+
+1.06 - GARBAGE COLLECTOR IN .NET
+#  l p # garbage collector in c#
+
+1.07 - TIPI IN .NET
+# hl   # differenza tra tipi valore e tipi riferimento in .net
+# h    # tipi di dati in .net
+# hl p # passaggio dei parametri in c#
+# h  p # Interfaccia vs Classe astratta
+
+1.09 - DELEGATI ED EVENTI IN .NET
+#  l p # concetto di delegato in c#
+#  l p # concetto di evento in c#
+
+1.11 - METADATI E INTROSPEZIONE IN .NET
+#  l p # Metaprogrammazione e riflessione in C#
+
+1.12 - PRINCIPI DI DESIGN
+#    p # Cosa sono e come sono classificati i design pattern?
+# hltp # Principio aperto/chiuso (open/closed principle) con almeno un esempio
+# hltp # single responsibility principle (principio di singola responsabilitÃ ) con almeno un'esempio
+# hlt  # principi per l'architettura dei package
+# hltp # spiegare i quattro bad design (fragilitÃ , immobilitÃ , rigiditÃ , viscositÃ ) (cosa rende un design cattivo)
+# hltp # principio di sostituibilitÃ  di liskov con almeno un esempio
+# hltp # dependency inversion principle (principio di inversione delle dipendenze) con almeno un esempio
+# hltp # interface segregation principle (principio di segregazione delle interfacce) con almeno un esempio
+#    p # Reuse/Release Equivalency Principle (REP)
+#    p # Common Closure Principle (CCP)
+#    p # Common Reuse Principle (CRP)
+#    p # Acyclic Dependecies Principle (ADP)
+#    p # Stable Dependecies Principle (SDP)
+#    p # Stable Abstractions Principle (SAP)
+
+1.13 - PATTERN DI DESIGN:
+# hltp # pattern observer (comportamentale) con esempi
+# hltp # Pattern flyweight (strutturale) con esempi
+# hltp # pattern adapter (strutturale) con esempi
+# hltp # pattern strategy (comportamentale) con esempi
+# hltp # pattern decorator (strutturale) con esempi
+# hltp # pattern composite (strutturale) con esempi
+# hltp # pattern visitor (comporamentale) con esempi
+# hltp # pattern singleton (di creazione) con esempi
+# h tp # pattern mvc (architetturale)
+# h tp # pattern mvp (architetturale)
+# h tp # pattern state (comportamentale)
+
+1.15 - SISTEMI DI CONTROLLO DELLE VERSIONI
+# hltp # modello lmu lock-modify-unlock nei vcs con vantaggi e svantaggi
+# hltp # modello cmm copy-modify-merge nei vcs con vantaggi e svantaggi
+
+2.02 - MODELLI, LINGUAGGI E MODELLI DI PROCESSO DI SVILUPPO
+# hl   # spiegare il modello a cascata e il modello iterativo
+# hltp # illustrare  rup â€“ rational unified process
+# hl p # spiegare il modello a cascata e le sue criticitÃ 
+#    p # modelli evolutivi extreme programming (XP)
+#    p # sviluppo incrementale-iterativo
+
+2.04 - ANALISI DEI REQUISITI: SICUREZZA E PRIVACY
+#    p # sistemi critici ed esempi di attacchi
+# h  p # principali categorie di requisiti della sicurezza
+# h    # tipologie di analisi dei requisiti (requisiti della sicurezza)
+#  l p # Si illustri brevemente il ciclo di vita della valutazione del rischio
+
+2.07 - PROGETTAZIONE PER LA SICUREZZA
+# hl p # capacitÃ  di sopravvivenza del sistema
+# hltp # white box e black box testing
+# hl p # regole di sicurezza nella progettazione (linee guida di progettazione nella sicurezza)
+
+
+NO CLUE BLUV
+#    p # linee guida progettazione per il deployment
+#  ltp # tipologie di requisiti
+# hl   # come viene implementata lâ€™ereditarietÃ  multipla?
+#    p # Ciclo di vita oggetto in linguaggio OO

@@ -1,0 +1,293 @@
+1. Se uptime riporta 0.70 0.35 0.88 come valori medi di carico, ciò indica un picco di carico 
+avvenuto di recente e superato – F 
+2. Un processo può essere avviato in tre modi: lancio da parte di un utente, avvio al boot da parte 
+di systemd, esecuzione periodica attraverso cron – F 
+3. La direttiva WantedBy nella definizione di una unit di servizio agisce quando il servizio viene 
+avviato – F 
+4. Il comando tcpdump non permette di rilevare se un processo è in ascolto su di una porta TCP -
+V 
+5. Il Distinguished Name identifica una entry LDAP ma non la sua posizione nel DIT – F 
+6. Il MIB teoricamente è un modello per collocare in una tassonomia qualsiasi tipo di informazione
+– V 
+7. SNMP è un protocollo applicativo trasportato da UDP – V 
+8. Il selettore local1.info cattura anche messaggi con etichette diverse – V 
+9. Nel sottoalbero del MIB con origine .1.3.6.1.4.1 qualsiasi ente può richiedere un ramo privato –
+V 
+10. L' amministratore di sistema non ha responsabilità legali, solo operative – F 
+11. Gli indirizzi nel range 169.254.1.0 - 169.254.254.255 sono riservati all'allocazione automatica 
+link local – V 
+12. Una distribuzione LTS differisce da una standard per la durata del supporto offerto dal 
+produttore – V
+13. Un servizio di tipo oneshot di systemd può risultare attivo anche se non corrisponde ad alcun 
+processo in esecuzione – V 
+14. Le pagine di manuale sono divise in sezioni – V 
+15. Un disco e una sua partizione sono entrambi dispositivi a blocchi – V 
+16. I sistemi NAS sono più efficienti dei sistemi SAN – F 
+17. Una entry LDAP può essere istanza di più classi simultaneamente – V 
+18. Le azioni start e stop di systemctl agiscono istantaneamente sul servizio - V 
+19. è consigliabile che l'amministratore effettui il login come root, in quanto la maggior parte 
+delle attività richiedono i privilegi corrispondenti – F 
+20. yum e apt sono strumenti per la gestione dei pacchetti Debian (e distribuzioni derivate) – F 
+21. Il comando ip a add 10.1.1.5/24 dev eth1 modifica anche la tabella di instradamento del 
+sistema – V
+22. Una Object Class non è altro che la specifica di quali tipi di attributo siano necessari o ammessi 
+in una entry che la istanzia – V 
+23. L'assegnamento di un indirizzo IPv4 link local avviene prima di interrogare server che 
+potrebbero assegnare un indirizzo diverso all'host – F 
+24. La CPU troppo lenta può non essere la causa principale di accodamento di processi e 
+conseguente aumento del carico – V 
+25. Le certificazioni professionali in ambito Linux sono utili sul mercato del lavoro – V 
+26. L'amministratore di sistema non ha responsabilità legali, ma solo operative – F 
+27. Il carico riportato da uptime rappresenta la percentuale di utilizzo della CPU – F 
+28. df e du sono strumenti per ottenere la stessa informazione – F 
+29. Solo la versione 3 di snmp prevede sistemi di sicurezza robusti – V 
+30. df e du sono strumenti differenti per ottenere la stessa informazione – F 
+31. L'azione disable di systemctl impedisce completamente l'avvio del servizio – F 
+32. NTP consente la sincronizzazione via Internet con errori ben inferiori al secondo – V 
+33. LDAP utilizza un modello relazionale dei dati – F 
+34. Il modello multimaster consente modifiche simultanee dello stesso database LDAP su diversi 
+server – V 
+35. Ripristinare l'integrità di un raid dopo la sostituzione di un disco può richiedere vari giorni – V 
+36. Un comando invocato con nome "nudo" del programma (esempio: ls) viene eseguito di 
+default se trovato nella directory corrente – F 
+37. Nell'architettura LVM, un Logical Volume viene costruito in modo da presentare un elenco di 
+blocchi contigui anche se fisicamente utilizza blocchi sparsi – V 
+38. Le pagine di manuale sono divise in sezioni – V 
+39. La pianificazione di attività con cron ha un periodo MINIMO di un minuto – V 
+40. I file in /dev contengono una copia dei dati dei al dispositivi – F 
+41. I log non possono essere analizzati in tempo reale – F 
+42. Le entry LDAP possono essere trovate solamente conoscendo il loro Distinguished Name – F 
+43. I file in /dev corrispondono uno-a-uno coi device installati sul sistema – F 
+44. I tipi di attributi fondamentali per l'organizzazione delle entry LDAP per l'autenticazione sono 
+dc, ou, cn, uid – V 
+45. Il downtime riconducibile a problemi software è superiore a quello imputabile a guasti 
+hardware – V
+46. NSS (Name Service Switch) è il sistema per la risoluzione dei nomi host in indirizzi IP – F 
+47. Non possono esistere due man page con lo stesso nome – F 
+48. I device driver rispettano le interfacce delle system call standard (open, close,read, ...) e 
+implementano i comandi corretti per il corrispondente dispositivo - V 
+49. La pianificazione di attività con cron è riservata all'utente root – F 
+50. La possibilità di cancellare un file è determinata unicamente dai permessi assegnati alla 
+directory che lo contiene – V 
+51. LDAP è un sistema autonomo che fornisce tutti i componenti necessari per l'autenticazione 
+centralizzata di utenti – F 
+52. lsof permette, in certe condizioni, di individuare file cancellati - V 
+53. top è comando più adatto per catturare una "fotografia istantanea" dello stato dei processi in 
+formato flessibile per successive elaborazioni – F 
+54. SNMP è utilizzabile per il monitoraggio di dispositivi, ma è principalmente impiegato per la 
+loro configurazione – F 
+55. Si definisce agent qualsiasi dispositivo fisico connesso in rete che supporti il protocollo SNMP 
+– F 
+56. NSS (Name Service Switch) e il sistema per la risoluzione dei nomi host in indirizzi IP – F 
+57. Attraverso la definizione di SMI, è possibile definire strutture dati di complessità arbitraria per 
+managed object di SNMP – F 
+58. Solo il produttore di una distribuzione può realizzare pacchetti installabili correttamente su di 
+un sistema che l'abbia adottata – F 
+59. Tutti i livelli RAID da 0 a 6 aumentano la tolleranza ai guasti – F 
+60. Le entry di LDAP possono essere mostrate secondo differenti organizzazioni gerarchiche – F 
+61. I target di systemd sono grosso modo equivalenti ai runlevel di SysVinit – V 
+62. La configurazione di un'interfaccia col comando ip a add 10.1.1.5/24 dev eth1 assegna un 
+indirizzo in modo persistente – F 
+63. Nell'architettura LVM, un Physical Volume viene utilizzato analogamente a una tradizionale 
+partizione di un disco – F 
+64. I file di un filesystem possono essere acceduti direttamente con la notazione 
+/dev/partizione/percorso/file – F 
+65. syslog classifica i messaggi principalmente sulla base del contenuto -F 
+66. SNMP è un protocollo applicativo trasportato su UDP – V 
+67. top riassume in una schermata l'output di free, ps, uptime – V 
+68. Un sistema di storage ideale (totalmente resistente a qualsiasi guasto hardware) rende 
+superfluo fare backup – F 
+69. Un task pianificato con cron come 10 22 2,20 * 4 programma viene eseguito almeno 6 volte al 
+mese – F 
+70. In SNMP l'interazione tra manager e agent è sempre del tipo richiesta-risposta – F 
+71. L'installazione manuale da sorgenti è più flessibile rispetto all'installazione da binari 
+precompilati – V
+72. LDAP è essenzialmente un database specializzato per distribuire informazioni relative a utenti 
+– V 
+73. Il comando sudo permette di differenziare quali comandi un utente può eseguire coi privilegi 
+di un altro utente – V 
+74. Una disponibilità a "6 nove" è facilmente ottenibile con una coppia di computer configurati 
+con heartbeat per il failover automatico – F 
+75. dpkg risolve automaticamente le dipendenze in fase di installazione di un pacchetto -V 
+76. Un disco può essere formattato senza essere partizionato – V 
+77. Il comando ss non è in grado di riportare alcuna informazione sul traffico che fluisce attraverso 
+un router – V 
+78. Gli alias di bash possono espandere ricorsivamente se stessi – F 
+79. Gli standard promossi dallo Zeroconf Working Group permettono di configurare 
+automaticamente i protocolli da usare a tutti i livelli, da quello fisico a quello applicativo – F 
+80. Gli attributi di una entry LDAP sono come variabili a cui viene assegnato un singolo valore – F 
+81. Gli alias di bash possono contenere altri alias, che vengono espansi – V 
+82. Ogni file ha come unico proprietario un utente – F 
+83. Le facility di syslog sono un insieme non ordinato – V 
+84. Il vantaggio dei sistemi NAS su quelli SAN è che non richiedono coordinazione tra i client – V 
+85. L’assegnamento di un indirizzo IPv6 link local secondo il mondello SLAAC avviene prima di 
+interrogare server che potrebbero assegnare un indirizzo diverso all’host – V 
+86. I nomi assegnati del dominio .local sono tipicamente strutturati in modo gerarchico secondo le 
+esigenze dell’organizzazione aziendale – F 
+87. Uno dei vantaggi di utilizzare un sistema di logging centralizzato è la marcatura temporale 
+coerente dei messaggi – V 
+88. dnsmasq può essere lanciato in più istanze per servire richieste su interfacce diverse con 
+configurazioni incompatibili tra loro – V 
+89. Le facility sono un insieme non ordinato – V 
+90. Se uptime riporta 0.70 0.35 0.88 come valori medi del carico, ciò indica un picco di carico 
+avvenuto negli ultimi minuti e ora superato – F 
+91. Se un gruppo ha certi permessi su di un file, un utente che fa parte di tale gruppo godrà 
+sempre come minimo degli stessi permessi su tale file - F 
+92. Un disco NON può essere mai formattato senza essere partizionato – F 
+93. Un comando invocato col nome del programma privo di percorso (esempio:ls) viene eseguito 
+se trovato nella directory corrente – F 
+94. Gli indirizzi IPv4 nel range 169.254.1.0 / 169.254.254.255 sono riservati all’allocazione 
+automatica link local - V 
+95. L’utente che crea un file può deciderne i permessi - V 
+96. Il comando sudo richiede all’utente la password di root per autorizzare l’esecuzione 
+privilegiata di comandi – F
+97. La pianificazione di un task con at non può essere revocata – F 
+98. Il sistema sudo permette unicamente di eseguire comandi coi privilegi di root – F 
+99. Il comando sudo permette di differenziare quali comandi un utente può eseguire coi privilegi 
+di root – V 
+100. Gli alias di bash possono definire o referenziare (espandere) altri alias – V 
+101. Senza permesso di lettura su di una directory, non si possono utilizzare i file in essa contenuti 
+– F 
+102. Un task pianificato con cron come */5 8 1 * * programma viene eseguito 12 volte al mese-V 
+103. La pianificazione di attività con cron ha un periodo massimo arbitrario - F 
+104. top è comando più adatto per catturare in un momento preciso lo stato di tutti i processi –F 
+105. Il comando batch è una delle interfacce al demone atd - V 
+106. L'utente che crea un file può decidere chi ne è proprietario - F 
+107. La pianificazione di attività con cron ha un periodo MASSIMO arbitrario - F 
+108. Il sistema di logging integrato in systemd è avviato prima di syslogd - V 
+109. Il selettore local1.info cattura anche messaggi con etichette diverse – V 
+110. Lo schema di LDAP definisce i tipi di attributo ammessi e le classi di oggetti utilizzabili - ? 
+111. In SNMP è sempre il manager a prendere l'iniziativa di contattare l'agent – F 
+112. Esiste un modo di recuperare tutti i managed object gestiti da un agent SNMP anche senza 
+conoscerne a priori gli OID - V 
+113. Si possono utilizzare i file contenuti una directory, sotto certe condizioni, anche
+se non si ha il permesso di leggere la directory – V
+114. È possibile formattare un disco senza essere partizionarlo – V
+115. L'utente proprietario di un file deve far parte del gruppo proprietario dello
+stesso file – F
+116. L'utente che crea un file può decidere quale deve essere il gruppo proprietario,
+tra quelli di cui è membro – V
+117. La pianificazione di attività con cron può avere una frequenza arbitraria – F
+118. Un processo può essere avviato al boot da parte di systemd – V
+119. La pianificazione di un task con at può essere monitorata e revocata – V
+120. L'azione mask di systemctl impedisce completamente l'avvio del servizio - V
+121. I log possono essere analizzati in tempo reale - V
+122. df e du sono strumenti con principi di funzionamento differenti per l'esame dello
+spazio disco – V
+123. Le facility sono un insieme ordinato – F
+124. La scarsità di memoria non causa accodamento di processi e conseguente
+aumento del carico, perché impedisce a priori l'avvio di nuovi processi - F
+125. Il comando ss può essere è usato per ottenere informazioni sul traffico che
+fluisce attraverso un router – F
+126. Nell'architettura LVM, un Physical Volume viene costruito in modo da presentare
+un elenco di blocchi contigui anche se fisicamente utilizza blocchi sparsi – F
+127. L'installazione manuale da sorgenti è più vincolante rispetto all'installazione da
+binari precompilati - F
+128. Una disponibilità a "6 nove" non è ottenibile con soluzione basata su failover - F
+129. yum e rpm sono strumenti per la gestione dei pacchetti RedHat (e distribuzioni
+derivate) - V
+130. Una entry LDAP può essere istanza di più classi strutturali simultaneamente – F
+131. Una Object Class specifica variabili e metodi disponibili a un oggetto che la istanzia – F
+132. Il Distinguished Name identifica la posizione nel DIT di una entry LDAP – V
+133. Le entry LDAP possono essere trovate conoscendo una combinazione di valori di
+attributi – V
+134. Qualsiasi ente può richiedere a ISO/ITU un ramo privato in una posizione
+arbitraria del MIB - F
+135. Il MIB è un modello sviluppato unicamente per definire una tassonomia di
+informazioni relative ai protocolli di rete – F
+136. In SNMP l'interazione più comune tra manager e agent è del tipo richiesta-risposta – V
+137. In SNMP l'agent può prendere l'iniziativa di contattare il manager – V
+138. I file di un filesystem possono essere acceduti solo dopo aver associato il
+dispositivo a un mount point – V
+139. L'utente proprietario di un file potrebbe avere permessi di accesso a tale file più
+limitati di altri utenti del sistema – V
+140. Il vantaggio dei sistemi SAN su quelli NAS è che non richiedono coordinazione
+tra i client – F
+141. bash non espande ricorsivamente un alias che contiene sè stesso – V
+142. Non esistono certificazioni professionali riconosciute in ambito Linux – F
+143. bash esegue un comando esterno solo se trova il file eseguibile in una delle
+directory elencate in PATH - F
+144. Il mount point è una directory speciale che non può essere utilizzata per contenere 
+direttamente file - F
+145. Gli utenti membri del gruppo proprietario di un file possono deciderne ipermessi – F
+146. Ogni file ha un unico utente e un unico gruppo come proprietari – V
+147. È possibile creare file in una partizione senza formattarla – F
+148. La pianificazione di attività via /etc/crontab è riservata all'utente root – V
+149. Un servizio di tipo one shot può risultare attivo solo se corrisponde a un processo in 
+esecuzione – F
+150. La logica di raggiungimento dei target di systemd è grosso modo la stessa con cui vengono 
+attivati i runlevel di SysVinit – F
+151. Se uptime riporta 0.70 0.35 0.88 come valori medi del carico, ciò indica una riduzione 
+transitoria di carico avvenuta negli ultimi minuti e ora superata – V
+152. Il sistema di logging integrato in systemd è sostanzialmente un duplicato di syslogd, le 
+funzionalità sono identiche – F
+153. DNS è il sistema per la risoluzione dei nomi host in indirizzi IP – V
+154. Una distribuzione LTS differisce da una standard per quantità di pacchetti compresi – F
+155. dpkg risolve automaticamente le dipendenze recuperando i pacchetti necessari in fase di 
+installazione di un pacchetto – F
+156. La necessità di eseguire backup non dipende dall'affidabilità del sistema di storage – V
+157. LDAP utilizza un modello a oggetti dei dati – V
+158. Il modello master-replica consente modifiche simultanee dello stesso database LDAP su 
+diversi server - F
+159. I tipi di attributo utilizzabili nelle entry LDAP devono essere definiti manualmente in uno 
+schema da ogni amministratore di directory, non esistono collezioni standard – F
+160. Si definisce agent il software di interfaccia di un dispositivo fisico connesso in rete, che 
+supporta il protocollo SNMP – V
+161. Tutte le versioni di SNMP prevedono sistemi di autenticazione robusti – F
+162. Si puà interrogare un agent SNMP in merito a un managed object solo conoscendone a priori 
+l'OID - F
+163. NTP consente la sincronizzazione via Internet con errori anche molto inferiori al secondo – V
+164. Il downtime è principalmente causato da guasti hardware – F
+165. Ogni man page ha un nome intrinsecamente univoco – F
+166. Il comando sudo richiede all'utente la sua stessa password per autorizzare l'esecuzione 
+privilegiata di comandi – V
+167. Un file in /dev può corrispondere a una famiglia di device installati sul sistema – F
+168. Un task pianificato con cron come * 8-17 1 * * programma viene eseguito 10 
+volte al mese – F
+169. Un task pianificato con cron come 10 22 2,20 * 4 programma viene eseguito almeno 4 volte 
+al mese – V
+170. Un servizio di tipo oneshot può risultare attivo solo se corrisponde a un processo in 
+esecuzione – F
+171. I messaggi inviati a un sistema di logging centralizzato devono essere preventivamente 
+marcati con un timestamp accurato – F
+172. lsof mostra solo i file esistenti sul filesystem correntemente in uso – F
+173. Gli standard promossi dallo Zeroconf Working Group riguardano la configurazione 
+automatica dei layer 2 e 3 della rete - ?
+174. I sistemi SAN sono più efficienti dei sistemi NAS – V
+175. Nell'architettura LVM, un Logical Volume viene utilizzato analogamente a una tradizionale 
+partizione di un disco – V
+176. Gli attributi di una entry LDAP sono valori etichettati con un tipo – V
+177. LDAP è un sistema che fornisce supporto per l'autenticazione centralizzata di utenti, da 
+integrare specificamente in sistemi e applicazioni – V
+178. SNMP è utilizzabile per il monitoraggio e la configurazione di dispositivi in rete – V 
+179. SNMP è un protocollo applicativo trasportato su TCP – F
+180. Le syscall standard (open, close, read, ...) sui file in /dev vengono gestite dai device driver 
+identificati dal nome del file - F
+181. Gli strumenti per generare pacchetti compatibili con una distribuzione come Debian o 
+RedHat sono utilizzabili indipendentemente dal produttore della distribuzione - V
+182. Le pagine di manuale sono divise in capitoli ordinati alfabeticamente – F
+183. È consigliabile che l'amministratore effettui il login come utente standard, in quanto la 
+maggior parte delle attività non richiedono i privilegi di root – V
+184. La possibilità di cancellare un file dipende dai permessi attribuiti al proprietario del file stesso 
+– F
+185. La pianificazione di attività con cron ha un periodo massimo di 1 anno – V 
+186. L'assegnamento di un indirizzo secondo il modello SLAAC parte ricercando in rete server che 
+potrebbero fornire tale informazione - ?
+187. Lo schema di LDAP contiene le entry della directory, organizzate secondo le classi - F
+188. Il sistema sudo può essere configurato per consentire di eseguire comandi con l'identità di 
+qualsiasi utente – V
+189. syslog classifica i messaggi principalmente sulla base di un'etichetta che specifica argomento 
+e importanza - V
+190. Il selettore local1.info cattura unicamente i messaggi con etichetta specificata – F
+192. Il comando tcpdump permette di rilevare se un processo è in ascolto su di una porta TCP – F
+193. dnsmasq può servire richieste su interfacce diverse a patto che le configurazioni siano tutte 
+uniformi – F
+194. Ripristinare l'integrità di un RAID dopo la disconnessione momentanea di un disco (non 
+guasto) può richiedere vari giorni – F
+195. Tutti i livelli RAID da 1 a 6 aumentano la tolleranza ai guasti – V
+196. La direttiva WantedBy nella definizione di una unit di servizio agisce quando il servizio viene 
+installato – V
+197. Le entry LDAP sono organizzate gerarchicamente – V
+198. Il carico riportato da uptime rappresenta la lunghezza della coda dei processi schedulabili - V
+199. LDAP è un database general-purpose, ma nell pratica viene usato soo per distribuire informazioni relative a utenti - F
+200. 
