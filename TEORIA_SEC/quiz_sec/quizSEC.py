@@ -8,7 +8,7 @@ def esegui_quiz(file_quiz):
     risposte_corrette = 0
     domande = []
 
-    with open(file_quiz, 'r') as file:
+    with open(file_quiz, 'r', encoding='utf-8') as file:
         for line in file:
             line = line.strip()
             if ',' not in line:
@@ -41,7 +41,7 @@ def esegui_quiz(file_quiz):
             # Chiedi all'utente se vuole aggiungere una nota
             nota = input("Vuoi aggiungere una nota a questa domanda? (lascia vuoto per non aggiungere): ")
             # Apri il file in modalità append
-            with open("domandeSbagliate.txt", "a") as file_domande_sbagliate:
+            with open("domandeSbagliate.txt", "a", encoding='utf-8') as file_domande_sbagliate:
                 # Scrivi la domanda e la nota (se presente) nel file
                 file_domande_sbagliate.write(f"Domanda: {domanda}\n")
                 if nota:
