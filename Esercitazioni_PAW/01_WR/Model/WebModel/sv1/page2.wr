@@ -1,0 +1,32 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv1#page2" name="Album Details" gr:x="360" gr:y="80" linkOrder="sv1#page2#ln2">
+  <ContentUnits>
+    <IndexUnit id="sv1#page2#inu2" name="Song List" entity="ent2" displayAttributes="ent2#att6" gr:x="0" gr:y="0">
+      <SortAttribute attribute="ent2#att6" order="ascending"/>
+      <SortAttribute attribute="ent2#att7" order="ascending"/>
+      <Selector id="sv1#page2#inu2#su1" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv1#page2#inu2#su1#rcond2" name="AlbumToBrano" role="rel1#role1" predicate="in" implied="false"/>
+      </Selector>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#page2#inu2">
+          <layout:Attribute attribute="ent2#att6"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Link id="sv1#page2#ln2" name="BackHome" to="sv1#page1" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-1,220,344,220;-346,220,-1,220"/>
+</Page>
