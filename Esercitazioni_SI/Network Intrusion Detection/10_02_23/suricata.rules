@@ -1,0 +1,6 @@
+#1) Scrivere una regola suricata in modalità alert per TUTTO il traffico icmp SOLTANTO IN ENTRATA sulla rete 192.168.X.X
+alert icmp any any -> 192.168.0.0/16 any (msg:"Ping detected"; sid:100001; rev:1;)
+
+2) Scrivere una (o più) regola suricata in modalità alert per qualsiasi richiesta a evilcorp.com. Nota bene NON è possibile utilizzare il protocollo http o la porta 80 per creare questa regola.
+alert dns any any -> any any (msg:"DNS query for evilcorp.com"; dns_query; content:"evilcorp.com"; sid:100002; rev:1;)
+alert ip any any -> evilcorp.com any (msg:"Request for evilcorp.com"; sid:100003; rev:1;)
