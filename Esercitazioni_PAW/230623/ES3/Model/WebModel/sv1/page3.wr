@@ -1,0 +1,33 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="270" gr:y="30" id="sv1#page3" name="RistorantePage">
+  <ContentUnits>
+    <IndexUnit gr:x="0" gr:y="0" id="sv1#page3#inu2" name="RistoranteList" entity="ent2" linkOrder="sv1#page3#inu2#ln2 sv1#page3#inu2#ln4" displayAttributes="ent2#att4">
+      <Link id="sv1#page3#inu2#ln2" name="CheckRistorante" to="sv1#page2#dau1" type="normal" validate="true">
+        <LinkParameter id="sv1#page3#inu2#ln2#par1" name="oid_KeyCondition1 [oid]" source="data[].ent2#att3" target="sv1#page2#dau1#su1#kcond1.ent2#att3"/>
+      </Link>
+      <SortAttribute attribute="ent2#att4" order="ascending"/>
+      <Link id="sv1#page3#inu2#ln4" name="BackToHome" to="sv1#page1#enu1" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-108,96,112,96"/>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#page3#inu2">
+          <layout:Link link="sv1#page3#inu2#ln2"/>
+          <layout:Link link="sv1#page3#inu2#ln4"/>
+          <layout:Attribute attribute="ent2#att4"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

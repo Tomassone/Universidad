@@ -1,0 +1,56 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="35" gr:y="30" id="sv1#page1" name="Home">
+  <ContentUnits>
+    <EntryUnit gr:x="15" gr:y="0" id="sv1#page1#enu1" name="ScegliCitta" entity="ent2" linkOrder="sv1#page1#enu1#ln1" fieldOrder="sv1#page1#enu1#sfld1">
+      <Link id="sv1#page1#enu1#ln1" name="ElencoRistoranti" to="sv1#page3#inu2" type="normal" validate="true">
+        <LinkParameter id="sv1#page1#enu1#ln1#par3" name="Key [oid]_current oid" source="key.ent2#att3" target="sv1#page3#inu2.current.ent2#att3"/>
+      </Link>
+      <SelectionField id="sv1#page1#enu1#sfld1" name="Seleziona citt&#224;" type="string" modifiable="true" attribute="ent2#att5" role="rel1#role2"/>
+      <Link id="sv1#page1#enu1#ln10" name="Flow10" to="sv1#page1#inu3" automaticCoupling="true" type="transport" validate="true"/>
+    </EntryUnit>
+    <IndexUnit id="sv1#page1#inu3" name="RistoranteList" gr:x="0" gr:y="140" entity="ent2" displayAttributes="ent2#att4">
+      <SortAttribute attribute="ent2#att4" order="ascending"/>
+      <Selector id="sv1#page1#inu3#su2" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv1#page1#inu3#su2#rcond1" name="RoleCondition1" role="rel1#role1" predicate="in" implied="false"/>
+      </Selector>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#page1#enu1">
+          <layout:Field field="sv1#page1#enu1#sfld1"/>
+          <layout:Link link="sv1#page1#enu1#ln1"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#page1#inu3">
+          <layout:Attribute attribute="ent2#att4"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

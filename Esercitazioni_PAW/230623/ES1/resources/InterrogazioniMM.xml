@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<Interrogazioni_MM  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:noNamespaceSchemaLocation="InterrogazioniMM.xsd">
+	
+	<Interrogazione_MM>
+		<ID_input_image>1000</ID_input_image>
+		<modalita>A</modalita>
+		<K>5</K>
+		<ID_output_image>5001</ID_output_image>
+		<ID_output_image>5002</ID_output_image>
+		<ID_output_image>5003</ID_output_image>
+		<ID_output_image>5004</ID_output_image>
+		<ID_output_image>5005</ID_output_image>
+	</Interrogazione_MM>
+	<Interrogazione_MM>
+		<ID_input_image>1001</ID_input_image>
+		<modalita>A</modalita>
+		<K>5</K>
+		<ID_output_image>5011</ID_output_image>
+		<ID_output_image>5022</ID_output_image>
+		<ID_output_image>5033</ID_output_image>
+		<ID_output_image>5044</ID_output_image>
+		<ID_output_image>5055</ID_output_image>
+	</Interrogazione_MM>
+	<Interrogazione_MM>
+		<ID_input_image>1002</ID_input_image>
+		<modalita>A</modalita>
+		<K>5</K>
+		<ID_output_image>5101</ID_output_image>
+		<ID_output_image>5202</ID_output_image>
+		<ID_output_image>5303</ID_output_image>
+		<ID_output_image>5404</ID_output_image>
+		<ID_output_image>5505</ID_output_image>
+	</Interrogazione_MM>    
+	
+</Interrogazioni_MM>
