@@ -1,113 +1,78 @@
 package it.unibo.paw;
 
-import java.util.Vector;
+import java.util.*;
 
 import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
-import org.xml.sax.helpers.DefaultHandler; 
+import org.xml.sax.helpers.DefaultHandler;
 
 public class SAXContentHandler extends DefaultHandler {
-	
-	boolean inFirstName = false;
-	String firstName = null;
-	boolean inLastName = false;
-	String lastName = null;
-	boolean inTelephone = false;
-	String Telephone = null;
-	boolean mmFound = false;
-	
-	public void startElement (String namespaceURI, String localName, String rawName, Attributes atts) { 
-		//System.out.println("AddressListContentHandler.startElement   namespaceURI=" + namespaceURI + " localName=" + localName + " rawName=" +rawName +" atts="+atts);
-		if (localName.equals("Information")){
-			peopleAmount++;
-			firstName = null;
-			lastName = null;
-		}
-		else if(localName.equals("First_name")){
-			inFirstName = true;
-		}
-		else if(localName.equals("Last_name")){
-			inLastName = true;
-		}
-		else if(localName.equals("Telephone")){
-			inTelephone = true;
-		}
-	} 
 
-	public void characters (char ch[], int start, int length) {
-		//System.out.println("AddressListContentHandler.characters   start=" + start + " length=" + length + " ch=" +new String(ch,start,length));
-		if( inFirstName ){
-			firstName = new String(ch,start,length);
+	boolean inScelta = false;
+	String scelta = null;
+	boolean inImage = false;
+	String image = null;
+	boolean inDescription = false;
+	String description = null;
+	boolean inPrice = false;
+	String price = null;
+	boolean inSelected = false;
+	String selected = null;
+
+	List<String> allItems = new ArrayList<>();
+
+	public void startElement(String namespaceURI, String localName, String rawName, Attributes atts) {
+		if (localName.equals("abiti") || localName.equals("camice") || localName.equals("giacche")
+				|| localName.equals("pantaloni") || localName.equals("gonne") || localName.equals("ultimi_arrivi")) {
+			inScelta = true;
+			scelta = localName;
+		} else if (localName.equals("image")) {
+			inImage = true;
+		} else if (localName.equals("description")) {
+			inDescription = true;
+		} else if (localName.equals("price")) {
+			inPrice = true;
+		} else if (localName.equals("selected")) {
+			inSelected = true;
 		}
-		else if( inLastName ){
-			lastName = new String(ch,start,length);
+	}
+
+	public void characters(char ch[], int start, int length) {
+		String content = new String(ch, start, length).trim();
+		if (inImage) {
+			image = content;
+		} else if (inDescription) {
+			description = content;
+		} else if (inPrice) {
+			price = content;
+		} else if (inSelected) {
+			selected = content;
 		}
-		else if( inTelephone ){
-			Telephone = new String(ch,start,length);
-		}
-	} 
+	}
 
 	public void endElement(String namespaceURI, String localName, String qName) {
-		//System.out.println("AddressListContentHandler.endElement   namespaceURI=" + namespaceURI + " localName=" + localName + " qName=" +qName);
-		if(localName.equals("First_name")){
-			inFirstName = false;
-		}
-		else if(localName.equals("Last_name")){
-			inLastName = false;
-		}
-		else if(localName.equals("Telephone")){
-			inTelephone = false;
-			if( firstName.startsWith("Don")){
-				donTel.addElement(Telephone);
+		if (localName.equals("abiti") || localName.equals("camice") || localName.equals("giacche")
+				|| localName.equals("pantaloni") || localName.equals("gonne") || localName.equals("ultimi_arrivi")) {
+			inScelta = false;
+		} else if (localName.equals("image")) {
+			inImage = false;
+		} else if (localName.equals("description")) {
+			inDescription = false;
+		} else if (localName.equals("price")) {
+			inPrice = false;
+		} else if (localName.equals("selected")) {
+			inSelected = false;
+			if (selected != null && selected.equalsIgnoreCase("true")) {
+				allItems.add(scelta + " " + image + " " + description + " " + price);
 			}
-		}
-		else if (localName.equals("Information")){
-			if( !mmFound && firstName!=null && lastName!=null ){ // controllo non necessario per documenti XML validi
-				if( firstName.equals("Mickey") && lastName.equals("Mouse") ){
-					mmFound = true;
-				}
-				else{
-					peoplePreMM++;
-				}
-			}
+			// reset per il prossimo item
+			image = null;
+			description = null;
+			price = null;
+			selected = null;
 		}
 	}
-	
-	private int ignorableWhitespace = 0;
-	@Override
-	public void ignorableWhitespace(char[] ch, int start, int length)
-			throws SAXException {
-		ignorableWhitespace += length;
-	}
-	public int getIgnorableWhitespace(){
-		return ignorableWhitespace;
-	}
-	
-	private int peopleAmount = 0;
-	public int getPeopleAmount(){
-		return peopleAmount;
-	}
-	
-	private int peoplePreMM = 0;
-	public int getPeoplePreMM(){
-		return peoplePreMM;
-	}
 
-	private Vector<String> donTel = new Vector<String>();
-	public Vector<String> getDonTel(){
-		return donTel;
+	public List<String> getScelte() {
+		return this.allItems;
 	}
-	
-}	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-
+}
