@@ -1,0 +1,9 @@
+tipi di traffico: ARP; HTTP; TCP
+
+attaccante: 172.23.3.81
+vittima: 172.23.3.76
+
+attacco identificato: bufferoverflow (filtro per protocollo: HTTP payload)
+
+alert http 172.23.3.81/24 any -> 172.23.3.76/24 any (msg:"Pacchetto in uscita da uno degli attaccanti"; pcre:"/A+/"; sid:100001; rev:1;)
+

