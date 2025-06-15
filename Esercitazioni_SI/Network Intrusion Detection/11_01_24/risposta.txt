@@ -1,0 +1,72 @@
+IP SERVER: 10.10.10.10
+
+- VARIE INTERAZIONI:
+
+1)
+Protocollo utilizzato: SSHv2
+IP CLIENT coinvolti: 10.10.3.1
+Porte coinvolte: 22
+
+non è un attacco
+
+2) 
+Protocollo utilizzato: TCP
+IP CLIENT coinvolti: varie
+Porte coinvolte: varie
+
+DDoS
+
+3) 
+Protocollo utilizzato: TELNET
+IP CLIENT coinvolti: 10.10.5.21
+Porte coinvolte: 23
+
+Non è un attacco
+
+4) 
+Protocollo utilizzato: TCP
+IP CLIENT coinvolti: 10.10.3.1
+Porte coinvolte: varie
+
+Port Scan
+
+alert tcp 10.10.0.0/16 any -> 10.10.10.10 23 (
+    msg: "FLAG detected in Telnet session";
+    content: "FLAG";
+    sid: 1000001;
+    rev: 1;
+)
+
+[PASSAGGI DA FARE
+
+Andiamo a fare sudo nano /etc/suricata/rules/seclab.rules dove andiamo ad inserire la nostra regola e salviamo
+
+Andiamo a metterci in ascolto su un altro tab sui log facendo
+tail -f /var/log/suricata/fast.log
+
+Facciamo partire suricata in modalità offline con
+sudo suricata -r [path del tracciato.pcap] -c /etc/suricata/suricata.yaml -l /var/log/suricata/
+
+Così riusciamo a vedere gli alert in fast.log
+
+Per vederli in eve.json con il payload modifichiamo suricata.yaml attivando payload-printabl]
+
+cambiamenti a /etc/suricata/suricata.yaml:
+
+default-rule-path: /etc/suricata/rules/
+
+rule-files:
+  - seclab.rules
+
+outputs:
+  - eve-log:
+      enabled: yes
+      filetype: regular
+      filename: /var/log/suricata/eve.json
+      types:
+        - alert:
+            payload: yes
+            payload-printable: yes
+            packet: yes
+
+sudo systemctl restart suricata
