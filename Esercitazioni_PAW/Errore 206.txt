@@ -1,0 +1,84 @@
+L'errore che stai ricevendo ora è:
+
+```
+com.ibm.db2.jcc.am.SqlSyntaxErrorException: DB2 SQL Error: SQLCODE=-206, SQLSTATE=42703, SQLERRMC=CONCORSOID, DRIVER=4.25.13
+```
+
+### 📌 Significato di `SQLCODE=-206`, `SQLSTATE=42703`:
+
+> **"Column CONCORSOID not found in any table of the SELECT statement."**
+
+In altre parole, DB2 non riesce a trovare la **colonna `CONCORSOID`** nella query che stai eseguendo.
+
+---
+
+### ✅ Cose da controllare:
+
+#### 1. **La colonna `CONCORSOID` esiste davvero nella tabella?**
+
+Controlla lo schema della tabella coinvolta. Esegui, ad esempio:
+
+```sql
+DESCRIBE TABLE NOMETABELLA;
+-- oppure
+SELECT COLNAME FROM SYSCAT.COLUMNS 
+WHERE TABNAME = 'NOMETABELLA' AND TABSCHEMA = 'TUO_SCHEMA';
+```
+
+#### 2. **Hai scritto correttamente il nome della colonna?**
+
+Controlla:
+
+* Errori di battitura (`CONCORSO_ID` vs `CONCORSOID`)
+* Uso scorretto delle maiuscole/minuscole (DB2 è **case-sensitive** se i nomi sono tra virgolette).
+
+  * `CONCORSOID` ≠ `"concorsOid"`
+
+#### 3. **Stai facendo un `JOIN` o una `SELECT` su più tabelle?**
+
+Verifica che `CONCORSOID` esista nella tabella corretta o che sia **referenziato con alias** corretti. Per esempio:
+
+```sql
+SELECT a.CONCORSOID FROM COMMISSARIO a;
+```
+
+#### 4. **È una query con `SELECT *` e poi accedi a `CONCORSOID` nel codice Java?**
+
+Verifica che:
+
+* La colonna sia presente nel `SELECT`.
+* Non sia stato fatto un alias che nasconde il nome originale:
+
+  ```sql
+  SELECT concorso_id AS CID FROM ... -- allora devi usare "CID", non "CONCORSOID"
+  ```
+
+---
+
+### 💡 Esempio di query corretta
+
+Se la tabella si chiama `COMMISSARIO` e ha la colonna `CONCORSOID`:
+
+```sql
+SELECT CONCORSOID, NOME FROM A1070949.COMMISSARIO;
+```
+
+---
+
+### Se usi Hibernate / JPA o JDBC:
+
+Controlla che:
+
+* Il campo `concorsoid` sia mappato correttamente nel tuo `@Entity`
+* Il nome della colonna nel database corrisponda al nome specificato con `@Column(name="...")`
+
+Esempio:
+
+```java
+@Column(name = "CONCORSOID")
+private Long concorsoId;
+```
+
+---
+
+Se vuoi, incolla la query SQL o il pezzo di codice Java in cui accedi a `CONCORSOID` e ti aiuto a sistemarlo.

@@ -1,4 +1,4 @@
-nano /etc/aide/aide.conf
+sudo nano /etc/aide/aide.conf
 
 linee cambiate:
 #@@x_include /etc/aide/aide.conf.d ^[a-zA-Z0-9_-]+$

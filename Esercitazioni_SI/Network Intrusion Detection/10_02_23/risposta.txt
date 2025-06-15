@@ -1,0 +1,22 @@
+Protocollo utilizzato: TELNET
+Ip coinvolti: 192.168.56.1 ; 192.168.56.8
+Porte coinvolte: 41852 ; 23 [effettiva]
+
+alert tcp 192.168.56.1 41852 -> 192.168.56.8 23 (msg:"Flag detected"; flow:from_client; 
+flowbits:set,logged_in; content:"sec:sec"; sid: 100005; rev:1;)
+
+[flowbits:set,logged_in
+
+👉 Flowbit operation
+
+    I flowbits sono usati per memorizzare lo stato tra più pacchetti.
+
+    Qui stai dicendo: “Imposta il bit logged_in se questa regola corrisponde”.
+
+    Può essere usato da altre regole per sapere se il client si è autenticato o ha fatto qualcosa prima.
+
+content:"sec:sec"
+
+👉 Cerca la stringa sec:sec nel payload TCP.
+
+    Se viene trovata, è un match. Potrebbe rappresentare una "flag" o una credenziale inviata.}

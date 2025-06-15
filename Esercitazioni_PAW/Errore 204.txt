@@ -1,0 +1,72 @@
+L'errore che ricevi da DB2:
+
+```
+com.ibm.db2.jcc.am.SqlSyntaxErrorException: DB2 SQL Error: SQLCODE=-204, SQLSTATE=42704, SQLERRMC=A1070949.COMMISSARIO, DRIVER=4.25.13
+```
+
+significa:
+
+### 📌 Errore `SQLCODE=-204`, `SQLSTATE=42704`:
+
+> **"Name A1070949.COMMISSARIO not found in the system catalog."**
+
+In parole semplici, il database **non riesce a trovare** l'oggetto chiamato `COMMISSARIO` nello schema `A1070949`.
+
+---
+
+### 🛠️ Cause comuni:
+
+1. **Tabella inesistente**: La tabella `COMMISSARIO` non è mai stata creata.
+2. **Schema errato**: Lo schema `A1070949` non è quello corretto. Magari la tabella è stata creata sotto un altro schema (es. `DBO`, `APP`, etc.).
+3. **Errore di maiuscole/minuscole**: DB2 è **case-sensitive** se usi i nomi tra virgolette. Quindi `COMMISSARIO` ≠ `"commissario"`.
+4. **Ambiente sbagliato**: Sei connesso al database sbagliato o su un'istanza diversa (es. test vs prod).
+
+---
+
+### ✅ Soluzioni possibili:
+
+#### 1. 🔍 Verifica che la tabella esista
+
+Esegui la seguente query per vedere se `COMMISSARIO` esiste nello schema indicato:
+
+```sql
+SELECT * FROM SYSCAT.TABLES 
+WHERE TABNAME = 'COMMISSARIO' AND TABSCHEMA = 'A1070949';
+```
+
+#### 2. 📛 Verifica se esiste in un altro schema:
+
+```sql
+SELECT TABSCHEMA, TABNAME FROM SYSCAT.TABLES 
+WHERE TABNAME = 'COMMISSARIO';
+```
+
+#### 3. ✅ Seleziona esplicitamente dallo schema corretto:
+
+Se la tabella è nello schema `DBADMIN`, ad esempio, modifica la query:
+
+```sql
+SELECT * FROM DBADMIN.COMMISSARIO;
+```
+
+#### 4. 🧾 Se devi crearla:
+
+```sql
+CREATE TABLE A1070949.COMMISSARIO (
+  ID INT PRIMARY KEY,
+  NOME VARCHAR(100),
+  ...
+);
+```
+
+#### 5. 🧠 Oppure imposta lo schema di default nella connessione:
+
+Nel tuo codice Java, puoi aggiungere il parametro `currentSchema` all'URL di connessione:
+
+```java
+jdbc:db2://host:port/database:currentSchema=DBADMIN;
+```
+
+---
+
+Se vuoi, puoi mostrarmi la query o il pezzo di codice Java che la esegue, così posso aiutarti meglio.

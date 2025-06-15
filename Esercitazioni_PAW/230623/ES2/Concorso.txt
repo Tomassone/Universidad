@@ -1,0 +1,7 @@
+Risultati Prima Query:
+Classe Concorso: classe1 - Numero candidati: 1
+
+
+Risultati Seconda Query:
+beppe grillo - Concorsi iscritti: 2
+
