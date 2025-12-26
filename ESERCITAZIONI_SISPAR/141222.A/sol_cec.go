@@ -9,9 +9,9 @@ import (
 const maxClienti = 15 
 const maxFrigorifero = 5
 const maxTortellini = 10
-const maxSfogline = 7
+const maxSfogline = 20
 
-var done = make(chan bool)fz
+var done = make(chan bool)
 var terminaLaboratorio = make(chan bool)
 
 var richiestePrenotazioni = make(chan int, 100)
@@ -62,60 +62,72 @@ func Sfoglina() {
 	fmt.Printf("[Sfoglina]: partenza! \n")
 	var ris int
 
-	richiesteDeposito <- 1
-	ris = <-ack_sfogline
-	if ris == -1 {
-		fmt.Printf("[Sfoglina]: termino! \n")
-		done <- true
-		return
+	for {
+		richiesteDeposito <- 1
+		ris = <-ack_sfogline
+		if ris == -1 {
+			fmt.Printf("[Sfoglina]: termino! \n")
+			done <- true
+			return
+		}
+		fmt.Printf("[Sfoglina]: effettuato deposito! \n")
 	}
-	fmt.Printf("[Sfoglina]: effettuato deposito! \n")
 
 	done <- true
 }
 
 func gestioneLaboratorio() {
-	var ritiriEffettuati int = 0, depositiEffettuati int = 0;
+	var prenotazioniEffettuate int = 0;
+	var ritiriEffettuati int = 0;
+	var depositiEffettuati int = 0;
 	var tortelliniDisponibili int = 0;
 	var isIdUsed [maxClienti]bool;
-	var fineClienti bool = false, fineSpogline bool = false;
-	var idIndex int = 0, tt int = 0;
+	var fine bool = false;
+	var idIndex int = 0;
+	var tt int = 0;
 
 	for {
 		select {
-			case <-when(fineSpogline == false && depositiEffettuati < maxSfogline && tortelliniDisponibili < maxFrigorifero && len(richiestePrenotazioni) == 0 && len(richiesteRitiro) == 0, richiesteDeposito):
-				depositiEffettuati++
-				tortelliniDisponibili++
-				tt = (rand.Intn(2) + 1)
-				time.Sleep(time.Duration(tt) * time.Second)
-				ack_sfogline <- 1
-				fmt.Printf("[Gestione laboratorio]: aggiunto tortellino, ci sono %d tortellini dispoinibili e %d ritiri effettutati; tot depositi effettuati = %d\n", tortelliniDisponibili, ritiriEffettuati, depositiEffettuati)
-			case <-when(fineClienti == false && ritiriEffettuati < maxClienti && tortelliniDisponibili > 0, richiestePrenotazioni):
-				tt = (rand.Intn(2) + 1)
-				time.Sleep(time.Duration(tt) * time.Second)
-				ack_clienti <- idCounter
-				idCounter++
-				fmt.Printf("[Gestione laboratorio]: prenotato tortellino, ci sono %d tortellini dispoinibili e %d ritiri effettutati; tot depositi effettuati = %d\n", tortelliniDisponibili, ritiriEffettuati, depositiEffettuati)
-			case <-when(fineClienti == false && ritiriEffettuati < maxClienti && tortelliniDisponibili > 0 && len(richiestePrenotazioni) == 0, idIndex <- richiesteRitiro):
+			case <-when(fine == false && ritiriEffettuati < maxTortellini, richiestePrenotazioni):
+				if (prenotazioniEffettuate >= maxTortellini) {
+					ack_clienti <- -1
+					fmt.Printf("[Gestione laboratorio]: non ammessa prenotazione tortellino, ci sono %d tortellini disponibili e %d ritiri effettuati; tot depositi effettuati = %d\n", tortelliniDisponibili, ritiriEffettuati, depositiEffettuati)
+				} else {
+					prenotazioniEffettuate++
+					tt = (rand.Intn(2) + 1)
+					time.Sleep(time.Duration(tt) * time.Second)
+					ack_clienti <- idCounter
+					idCounter++
+					fmt.Printf("[Gestione laboratorio]: prenotato tortellino, ci sono %d tortellini disponibili e %d ritiri effettuati; tot depositi effettuati = %d\n", tortelliniDisponibili, ritiriEffettuati, depositiEffettuati)
+				}
+			case idIndex = <-when(fine == false && ritiriEffettuati < maxTortellini && tortelliniDisponibili > 0 && len(richiestePrenotazioni) == 0, richiesteRitiro):
 				tortelliniDisponibili--
 				ritiriEffettuati++
 				tt = (rand.Intn(2) + 1)
 				time.Sleep(time.Duration(tt) * time.Second)
 				if isIdUsed[idIndex] == false {
 					ack_clienti <- 1
-					isIdUsed[idIndex] = true	
-				}
-				else {
+					isIdUsed[idIndex] = true
+					fmt.Printf("[Gestione laboratorio]: ritirato tortellino, ci sono %d tortellini disponibili e %d ritiri effettuati; tot depositi effettuati = %d\n", tortelliniDisponibili, ritiriEffettuati, depositiEffettuati)	
+				} else {
 					ack_clienti <- -1
+					fmt.Printf("[Gestione laboratorio]: non ammesso ritiro tortellino, ci sono %d tortellini disponibili e %d ritiri effettuati; tot depositi effettuati = %d\n", tortelliniDisponibili, ritiriEffettuati, depositiEffettuati)
 				}
-				fmt.Printf("[Gestione laboratorio]: prenotato tortellino, ci sono %d tortellini dispoinibili e %d ritiri effettutati; tot depositi effettuati = %d\n", tortelliniDisponibili, ritiriEffettuati, depositiEffettuati)
+			case <-when(fine == false && tortelliniDisponibili < maxFrigorifero && 
+				(len(richiestePrenotazioni) == 0 && (len(richiesteRitiro) == 0 || tortelliniDisponibili == 0)), richiesteDeposito):
+				depositiEffettuati++
+				tortelliniDisponibili++
+				tt = (rand.Intn(2) + 1)
+				time.Sleep(time.Duration(tt) * time.Second)
+				ack_sfogline <- 1
+				fmt.Printf("[Gestione laboratorio]: aggiunto tortellino, ci sono %d tortellini disponibili e %d ritiri effettuati; tot depositi effettuati = %d\n", tortelliniDisponibili, ritiriEffettuati, depositiEffettuati)
 
 			//terminazione
-			case <-when(fineSfogline == true, richiesteDeposito):
+			case <-when(fine == true, richiesteDeposito):
 				ack_sfogline <- -1
-			case <-when(fineClienti == true, richiestePrenotazioni):
+			case <-when(fine == true, richiestePrenotazioni):
 				ack_clienti <- -1
-			case <-when(fineClienti == true, richiesteRitiro):
+			case <-when(fine == true, richiesteRitiro):
 				ack_clienti <- -1
 			
 			case <-terminaLaboratorio:
@@ -124,12 +136,8 @@ func gestioneLaboratorio() {
 				return
 		}
 
-		if ritiriEffettuati == maxClienti {
-			fineClienti = true
-		}
-
-		if depositiEffettuati == maxSfogline {
-			fineSfogline = true
+		if ritiriEffettuati == maxTortellini {
+			fine = true
 		}
 	}
 }
